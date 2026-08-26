@@ -20,12 +20,19 @@ const CONTACT_INFO = {
 };
 
 const CLIENT_LOGOS = [
-  { id: 1, name: 'Empresa A', img: '/lampe-logo.png' },
-  { id: 2, name: 'Empresa B', img: '/lampe-logo.png' },
-  { id: 3, name: 'Empresa C', img: '/lampe-logo.png' },
-  { id: 4, name: 'Empresa D', img: '/lampe-logo.png' },
-  { id: 5, name: 'Empresa E', img: '/lampe-logo.png' },
-  { id: 6, name: 'Empresa F', img: '/lampe-logo.png' },
+  { id: 1, name: 'CNV', img: '/logotipo-clientes/cnv-logo.png' },
+  { id: 2, name: 'Lunaire', img: '/logotipo-clientes/lunaire-logo.png' },
+  { id: 3, name: 'Organizare', img: '/logotipo-clientes/organizare-logo.png' },
+  { id: 4, name: 'Paulino Advogados', img: '/logotipo-clientes/paulino-advogados-logo.png' },
+  { id: 5, name: 'Paulino Veículos', img: '/logotipo-clientes/paulino-veiculos-logo.png' },
+  { id: 6, name: 'Pierre Veículos', img: '/logotipo-clientes/pierre-veiculos-logo.png' },
+  { id: 7, name: 'Protagon', img: '/logotipo-clientes/protagon-logo.png' },
+  { id: 8, name: 'Rava', img: '/logotipo-clientes/rava-logo.png' },
+  { id: 9, name: 'somart', img: '/logotipo-clientes/somart-logo.png' },
+  { id: 10, name: 'Talisma', img: '/logotipo-clientes/talisma-logo.png' },
+  { id: 11, name: 'TI Avançado', img: '/logotipo-clientes/ti-avançado-logo.png' },
+  { id: 12, name: 'Trio da Tomate', img: '/logotipo-clientes/trio-da-tomate-logo.png' },
+  { id: 13, name: 'Eu tenho a Senha', img: '/logotipo-clientes/eu-tenho-a-senha-logo.png' },
 ];
 
 export default function Contact() {
@@ -170,28 +177,28 @@ export default function Contact() {
             </h2>
           </div>
 
-          {/* Grid Flexível de Logos Circulares */}
-          <div className="flex flex-wrap items-center justify-center gap-6 max-w-4xl mx-auto">
+          {/* Grid Flexível de Logos (Sem círculos, com glow no PNG) */}
+          <div className="flex flex-wrap items-center justify-center gap-8 max-w-5xl mx-auto">
             {CLIENT_LOGOS.map((client) => {
               const isClientLit = litClients.includes(client.id);
               return (
                 <div
                   key={client.id}
                   onClick={() => toggleClient(client.id)}
-                  className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center bg-neutral-950 cursor-pointer overflow-hidden transition-all duration-300 ${isClientLit
-                    ? 'border-2 border-yellow-400 drop-shadow-[0_0_20px_rgba(250,204,21,0.9)] opacity-100 grayscale-0'
-                    : 'opacity-50 grayscale border border-neutral-800 hover:opacity-100 hover:grayscale-0 hover:border-yellow-400 hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.6)]'
+                  className={`w-28 sm:w-32 h-20 flex items-center justify-center cursor-pointer transition-all duration-300 ${isClientLit
+                    ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(255,144,80,0.8)]'
+                    : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
                     }`}
                   title={client.name}
                 >
                   <img
                     src={client.img}
                     alt={client.name}
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="max-w-full max-h-full object-contain"
                     onError={(e) => {
                       // Fallback em caso de erro da imagem
                       e.target.style.display = 'none';
-                      e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-yellow-400">${client.name[0]}</span>`;
+                      e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-yellow-400 text-glow whitespace-nowrap">${client.name}</span>`;
                     }}
                   />
                 </div>
