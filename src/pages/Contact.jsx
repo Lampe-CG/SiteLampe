@@ -128,15 +128,16 @@ export default function Contact() {
             </div>
 
             {/* Coluna Direita: Lâmpada Interativa */}
-            <div className="bg-neutral-900/40 border border-neutral-800/80 rounded-2xl p-8 backdrop-blur-sm flex flex-col items-center justify-center text-center h-full min-h-[300px]">
+            {/* Coluna Direita: Lâmpada Interativa */}
+            <div className="flex flex-col items-center justify-center text-center h-full min-h-[300px]">
               <div
                 onClick={() => setIsLit(!isLit)}
                 className="cursor-pointer p-6 rounded-full hover:bg-neutral-950/40 transition-colors duration-300 relative group"
               >
                 <Lightbulb
                   className={`w-28 h-28 transition-all duration-500 ${isLit
-                    ? 'text-yellow-400 drop-shadow-[0_0_40px_rgba(250,204,21,1)] scale-110'
-                    : 'text-neutral-600 hover:text-yellow-200 hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]'
+                      ? 'text-yellow-400 drop-shadow-[0_0_40px_rgba(250,204,21,1)] scale-110'
+                      : 'text-neutral-600 hover:text-yellow-200 hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]'
                     }`}
                 />
               </div>

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Lightbulb } from 'lucide-react';
 
 export default function About() {
   const [selectedPerson, setSelectedPerson] = useState('lara');
+  const [isLit, setIsLit] = useState(false);
 
   const team = {
     lara: {
@@ -40,7 +42,7 @@ export default function About() {
           </p>
         </div>
 
-        {/* 3-Column Layout (Lara - L A M P E - Pedro) */}
+        {/* 3-Column Layout (Lara - Lightbulb - Pedro) */}
         <div className="grid grid-cols-3 items-center gap-4 sm:gap-8 max-w-3xl mx-auto">
 
           {/* Column 1: Lara */}
@@ -64,16 +66,16 @@ export default function About() {
             </span>
           </div>
 
-          {/* Column 2: Vertical LAMPE Typography */}
-          <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
-            {['L', 'A', 'M', 'P', 'E'].map((letter, index) => (
-              <span
-                key={index}
-                className="text-2xl sm:text-5xl font-black text-yellow-400 leading-none drop-shadow-[0_0_8px_rgba(250,204,21,0.6)] select-none hover:scale-110 transition-transform duration-300"
-              >
-                {letter}
-              </span>
-            ))}
+          {/* Column 2: Interactive Lightbulb */}
+          <div className="flex flex-col items-center justify-center">
+            <Lightbulb
+              size={72}
+              onClick={() => setIsLit(!isLit)}
+              className={`cursor-pointer ${isLit
+                ? 'text-yellow-400 drop-shadow-[0_0_30px_rgba(250,204,21,1)] scale-110 transition-all duration-300'
+                : 'text-neutral-600 hover:text-neutral-400 transition-colors duration-300'
+                }`}
+            />
           </div>
 
           {/* Column 3: Pedro */}

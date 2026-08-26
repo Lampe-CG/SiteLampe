@@ -1,15 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Lightbulb, Shield, ShieldCheck, Award, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
-  const customerLogos = [
-    { name: 'BetaTech', svgPath: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' },
-    { name: 'AlfaCorp', svgPath: 'M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z' },
-    { name: 'OmegaSys', svgPath: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z' },
-    { name: 'GlowMedia', svgPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 15 }}
@@ -18,24 +12,26 @@ export default function Home() {
       transition={{ duration: 0.6 }}
       className="flex-1 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 text-neutral-300 relative overflow-hidden"
     >
-      {/* Glow backgrounds */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-yellow-500/5 blur-[140px] pointer-events-none"></div>
+      {/* Background ambient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow-500/5 blur-[160px] pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-[300px] h-[300px] rounded-full bg-[#FE904F]/5 blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-6xl w-full mx-auto z-10 space-y-20">
-        
-        {/* A. Hero Section (Topo da Página) */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Left Column (Video Embed) */}
+      {/* AUMENTADO: max-w-6xl -> max-w-[1600px] */}
+      <div className="max-w-[1450px] w-full mx-auto z-10">
+
+        {/* ALTERADO: vídeo agora ocupa uma coluna maior */}
+        <section className="min-h-[85vh] grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center py-8">
+
+          {/* Coluna da Esquerda - Vídeo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="w-full relative aspect-video rounded-2xl overflow-hidden border border-yellow-500/30 drop-shadow-[0_0_20px_rgba(250,204,21,0.15)] hover:border-yellow-400/60 hover:drop-shadow-[0_0_30px_rgba(250,204,21,0.35)] transition-all duration-500"
+            className="w-full aspect-video relative rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl group transition-all duration-300 hover:border-neutral-700"
           >
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1"
+              src="https://www.youtube.com/embed/MYTmE2brxqg?si=hAjwVk2VUxMpsR_e+"
               title="LAMPE Apresentação"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -43,99 +39,131 @@ export default function Home() {
             ></iframe>
           </motion.div>
 
-          {/* Right Column (Text Content) */}
+          {/* Coluna da Direita */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="space-y-6 flex flex-col justify-center"
+            className="space-y-6 flex flex-col justify-center h-full"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-yellow-500/30 bg-yellow-500/5 text-yellow-400 text-xs font-semibold uppercase tracking-wider self-start animate-pulse">
-              <Lightbulb className="w-3.5 h-3.5 text-yellow-400 animate-lamp-flicker" />
-              Assessoria Jurídica de Elite
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white leading-tight">
-              A Solução Eficiente para <br />
-              <span className="text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.3)]">
-                Segurança da sua Ideia
-              </span>
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              Inovação, Proteção e Propriedade Intelectual
             </h2>
-            <p className="text-neutral-400 leading-relaxed text-base sm:text-lg">
+
+            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <p className="text-neutral-400 leading-relaxed text-base">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+
+            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <p className="text-base text-neutral-400 leading-relaxed">
+              Mauris ultrices felis purus, sed hendrerit enim mattis ut. Donec pretium erat at feugiat tempor. Ut enim ad minim veniam, quis nostrud exercitation.
             </p>
           </motion.div>
         </section>
 
-        {/* Highlight Block (Chamada Principal e CTA) */}
-        <section className="text-center py-12 px-6 rounded-3xl border border-neutral-900 bg-gradient-to-b from-neutral-950 to-black relative overflow-hidden">
-          <div className="absolute inset-0 bg-yellow-500/5 blur-[120px] pointer-events-none"></div>
-          
-          <div className="max-w-3xl mx-auto space-y-8 z-10 relative">
-            <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-none">
-              TEVE UMA IDEIA? <br className="hidden sm:inline" />
-              <span className="text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
-                TEM QUE TER LAMPE!
-              </span>
-            </h1>
+        {/* Linha de divisão */}
+        <div className="pt-20 pb-20">
+          <hr className="border-t border-neutral-800/80 w-full" />
+        </div>
 
-            <p className="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium erat at feugiat tempor. Mauris ultrices felis purus, sed hendrerit enim mattis ut.
-            </p>
+        {/* Seção principal */}
+        <section className="flex flex-col items-center justify-center text-center py-12 relative">
+
+          {/* Ray / Sunburst Background */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg
+              className="w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] text-yellow-500/10 animate-spin"
+              style={{ animationDuration: '60s' }}
+              viewBox="0 0 100 100"
+            >
+              <defs>
+                <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(250,204,21,0.2)" />
+                  <stop offset="100%" stopColor="rgba(250,204,21,0)" />
+                </radialGradient>
+              </defs>
+
+              <circle cx="50%" cy="50%" r="45" fill="url(#sunGlow)" />
+
+              {[...Array(12)].map((_, i) => (
+                <line
+                  key={i}
+                  x1="50"
+                  y1="50"
+                  x2={50 + 40 * Math.cos((i * 2 * Math.PI) / 12)}
+                  y2={50 + 40 * Math.sin((i * 2 * Math.PI) / 12)}
+                  stroke="currentColor"
+                  strokeWidth="0.5"
+                  strokeDasharray="2 3"
+                />
+              ))}
+            </svg>
+          </div>
+
+          <div className="z-10 flex flex-col items-center space-y-4 max-w-4xl mx-auto">
+            <motion.h3
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#FE904F] tracking-tight uppercase"
+            >
+              TEVE UMA IDEIA ?
+            </motion.h3>
+
+            <motion.h4
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight uppercase"
+            >
+              TEM QUE TER
+            </motion.h4>
 
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
+              className="relative py-4"
             >
-              <a
-                href="https://wa.me/5581999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.4)] hover:shadow-[0_0_35px_rgba(250,204,21,0.7)] cursor-pointer"
+              <motion.h1
+                className="text-7xl sm:text-9xl md:text-[11rem] font-black tracking-widest text-yellow-400 select-none cursor-pointer drop-shadow-[0_0_35px_rgba(250,204,21,0.9)] hover:drop-shadow-[0_0_55px_rgba(250,204,21,1)] transition-all duration-300"
+                animate={{
+                  scale: [1, 1.02, 1],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                LAMPE
+              </motion.h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="pt-6"
+            >
+              <Link
+                to="/servicos"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_35px_rgba(250,204,21,0.6)] cursor-pointer"
               >
                 REGISTRE JÁ A SUA MARCA!
                 <ArrowRight className="w-5 h-5 text-black" />
-              </a>
+              </Link>
             </motion.div>
-          </div>
-        </section>
-
-        {/* B. Seção Prova Social ("EMPRESAS QUE ACENDERAM SEUS NEGÓCIOS") */}
-        <section className="space-y-10 text-center">
-          <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-wider uppercase">
-              EMPRESAS QUE <span className="text-yellow-400">ACENDERAM</span> SEUS NEGÓCIOS
-            </h2>
-            <p className="text-neutral-500 text-sm max-w-lg mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {customerLogos.map((logo, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl border border-neutral-900 bg-neutral-950/40 flex flex-col items-center justify-center gap-4 transition-all duration-500 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 hover:border-yellow-400/40 hover:shadow-[0_0_25px_rgba(250,204,21,0.25)] hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.8)] group cursor-pointer"
-              >
-                <svg
-                  className="w-12 h-12 text-neutral-400 group-hover:text-yellow-400 transition-colors duration-300"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d={logo.svgPath} />
-                </svg>
-                <span className="text-neutral-500 group-hover:text-white font-bold text-sm tracking-wide transition-colors duration-300">
-                  {logo.name}
-                </span>
-              </div>
-            ))}
           </div>
         </section>
 
