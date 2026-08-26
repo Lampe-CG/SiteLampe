@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-neutral-900 w-full px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20">
-        
+
         {/* Brand/Logo Section */}
         <NavLink to="/" className="flex items-center gap-3 focus:outline-none">
           <img

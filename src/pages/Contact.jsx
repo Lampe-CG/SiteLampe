@@ -136,8 +136,8 @@ export default function Contact() {
               >
                 <Lightbulb
                   className={`w-28 h-28 transition-all duration-500 ${isLit
-                      ? 'text-yellow-400 drop-shadow-[0_0_40px_rgba(250,204,21,1)] scale-110'
-                      : 'text-neutral-600 hover:text-yellow-200 hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]'
+                    ? 'text-yellow-400 drop-shadow-[0_0_40px_rgba(250,204,21,1)] scale-110'
+                    : 'text-neutral-600 hover:text-yellow-200 hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]'
                     }`}
                 />
               </div>

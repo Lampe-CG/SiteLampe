@@ -102,7 +102,7 @@ export default function About() {
         </div>
 
         {/* Dynamic Detail Area */}
-        <div className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden">
+        <div className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden min-h-[280px]">
           <div className="absolute inset-0 bg-yellow-500/5 blur-xl pointer-events-none"></div>
 
           <AnimatePresence mode="wait">

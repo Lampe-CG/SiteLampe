@@ -3,13 +3,24 @@
 @theme {
   --color-neon-yellow: #FFD700;
   --animate-lamp-flicker: lamp-flicker 3s infinite alternate;
-  
+
   @keyframes lamp-flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
       opacity: 1;
       filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.6));
     }
-    20%, 24%, 55% {
+
+    20%,
+    24%,
+    55% {
       opacity: 0.7;
       filter: drop-shadow(0 0 2px rgba(250, 204, 21, 0.2));
     }
@@ -27,7 +38,8 @@
 }
 
 /* Base styles override */
-html, body {
+html,
+body {
   background-color: #030303;
   color: #ffffff;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -39,13 +51,16 @@ html, body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #030303;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #262626;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #ffd700;
   box-shadow: 0 0 8px #ffd700;
