@@ -36,7 +36,7 @@ const SERVICES_DATA = {
 export default function Services() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  
+
   const rawTipo = searchParams.get('tipo');
   const tipo = SERVICES_DATA[rawTipo] ? rawTipo : 'marca';
   const data = SERVICES_DATA[tipo];
@@ -93,7 +93,7 @@ export default function Services() {
 
             {/* Coluna da Direita - Conteúdo Textual Exclusivo */}
             <div className="space-y-6 flex flex-col justify-center h-full">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              <h2 className="colortext-3xl lg:text-4xl xl:text-5xl font-bold text-lampe-orange leading-tight">
                 {data.title}
               </h2>
               {data.paragraphs.map((paragraph, index) => (

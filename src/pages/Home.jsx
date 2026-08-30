@@ -46,7 +46,7 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="space-y-6 flex flex-col justify-center h-full"
           >
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-lampe-orange leading-tight">
               Inovação, Proteção e Propriedade Intelectual
             </h2>
 

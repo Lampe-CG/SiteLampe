@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-lampe-orange: #FF8F4E;
   --color-neon-yellow: #FFD700;
   --animate-lamp-flicker: lamp-flicker 3s infinite alternate;
 

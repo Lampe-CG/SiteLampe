@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-neutral-900 text-neutral-400 py-12 px-4 sm:px-6 lg:px-8 w-full mt-auto">
+    <footer className="bg-neutral-950 border-t border-neutral-900 text-neutral-400 py-12 px-4 sm:px-6 lg:px-8 w-full mt-auto">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
 
         {/* Branding */}
@@ -32,7 +32,7 @@ export default function Footer() {
           <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Conecte-se Conosco</h4>
           <div className="flex gap-4">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/lampebr/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-yellow-400 hover:border-yellow-400/40 hover:shadow-[0_0_10px_rgba(250,204,21,0.3)] transition-all duration-300 cursor-pointer"
@@ -45,7 +45,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/5581999999999"
+              href="https://api.whatsapp.com/send?phone=5583987048202"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-yellow-400 hover:border-yellow-400/40 hover:shadow-[0_0_10px_rgba(250,204,21,0.3)] transition-all duration-300 cursor-pointer"
@@ -56,7 +56,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:contato@lampe.com.br"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@lampebr.com"
               className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-yellow-400 hover:border-yellow-400/40 hover:shadow-[0_0_10px_rgba(250,204,21,0.3)] transition-all duration-300 cursor-pointer"
               aria-label="Email"
             >

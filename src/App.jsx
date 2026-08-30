@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-neutral-950 text-white selection:bg-yellow-400 selection:text-black">
+      <div className="flex flex-col min-h-screen bg-[#121214] text-white selection:bg-yellow-400 selection:text-black">
         {/* Navigation Bar */}
         <Navbar />
 

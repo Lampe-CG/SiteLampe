@@ -13,9 +13,9 @@ const CONTACT_INFO = {
     link: 'https://api.whatsapp.com/send?phone=5583987048202',
   },
   emails: [
-    { label: 'pedro@lampebr.com', link: 'mailto:pedro@lampebr.com' },
-    { label: 'lara@lampebr.com', link: 'mailto:lara@lampebr.com' },
-    { label: 'contato@lampebr.com', link: 'mailto:contato@lampebr.com' },
+    { label: 'pedro@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=pedro@lampebr.com' },
+    { label: 'lara@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=lara@lampebr.com' },
+    { label: 'contato@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=contato@lampebr.com' },
   ],
 };
 
@@ -80,7 +80,7 @@ export default function Contact() {
 
             {/* Coluna Esquerda: Lista de Contatos */}
             <div className="space-y-6 bg-neutral-900/40 border border-neutral-800/80 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-center h-full min-h-[300px]">
-              <h2 className="text-xl font-bold text-white mb-2 uppercase tracking-wide border-b border-neutral-800 pb-3">
+              <h2 className="text-xl font-bold text-lampe-orange mb-2 uppercase tracking-wide border-b border-neutral-800 pb-3">
                 Canais de Contato
               </h2>
               <div className="space-y-5">
@@ -139,7 +139,7 @@ export default function Contact() {
             <div className="flex flex-col items-center justify-center text-center h-full min-h-[300px]">
               <div
                 onClick={() => setIsLit(!isLit)}
-                className="cursor-pointer p-6 rounded-full hover:bg-neutral-950/40 transition-colors duration-300 relative group"
+                className="cursor-pointer p-6 rounded-full transition-colors duration-300 relative group"
               >
                 <Lightbulb
                   className={`w-28 h-28 transition-all duration-500 ${isLit
@@ -172,7 +172,7 @@ export default function Contact() {
         {/* SEÇÃO INFERIOR: "EMPRESAS QUE ACENDERAM SEUS NEGÓCIOS" */}
         <div className="space-y-10 border-t border-neutral-900 pt-16">
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-wide uppercase">
+            <h2 className="text-2xl sm:text-3xl font-black text-lampe-orange   tracking-wide uppercase">
               EMPRESAS QUE <span className="text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]">ACENDERAM</span> SEUS NEGÓCIOS
             </h2>
           </div>

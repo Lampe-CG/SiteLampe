@@ -25,7 +25,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-neutral-900 w-full px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 bg-neutral-950 backdrop-blur-md border-b border-neutral-900 w-full px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20">
 
         {/* Logo / Marca */}
@@ -40,14 +40,6 @@ export default function Navbar() {
               e.target.nextSibling.classList.add('flex');
             }}
           />
-          <div className="hidden flex-col leading-tight">
-            <span className="text-2xl font-black tracking-widest text-white">
-              LAMPE
-            </span>
-            <span className="text-[8px] sm:text-[9px] text-neutral-500 tracking-wider font-semibold uppercase">
-              A Luz que protege sua marca
-            </span>
-          </div>
         </NavLink>
 
         {/* Desktop Links */}
@@ -69,12 +61,11 @@ export default function Navbar() {
                 </NavLink>
 
                 {/* Submenu Dropdown com Hover Bridge */}
-                <div 
-                  className={`absolute top-[70px] left-1/2 -translate-x-1/2 w-60 bg-[#121214] border border-neutral-800 rounded-xl shadow-2xl py-2 z-50 transition-all duration-300 transform ${
-                    showDropdown 
-                      ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
-                      : 'opacity-0 invisible translate-y-2 pointer-events-none'
-                  }`}
+                <div
+                  className={`absolute top-[70px] left-1/2 -translate-x-1/2 w-60 bg-[#121214] border border-neutral-800 rounded-xl shadow-2xl py-2 z-50 transition-all duration-300 transform ${showDropdown
+                    ? 'opacity-100 visible translate-y-0 pointer-events-auto'
+                    : 'opacity-0 invisible translate-y-2 pointer-events-none'
+                    }`}
                 >
                   {/* Hover Bridge: área invisível conectando o link ao dropdown */}
                   <div className="absolute -top-4 left-0 w-full h-4 bg-transparent" />
@@ -82,33 +73,30 @@ export default function Navbar() {
                   <NavLink
                     to="/servicos?tipo=marca"
                     onClick={() => setShowDropdown(false)}
-                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${
-                      location.search === '?tipo=marca' || location.search === '' 
-                        ? 'text-yellow-400 bg-neutral-800/50 font-semibold' 
-                        : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
-                    }`}
+                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${location.search === '?tipo=marca' || location.search === ''
+                      ? 'text-yellow-400 bg-neutral-800/50 font-semibold'
+                      : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                      }`}
                   >
                     Registro de Marca
                   </NavLink>
                   <NavLink
                     to="/servicos?tipo=patentes"
                     onClick={() => setShowDropdown(false)}
-                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${
-                      location.search === '?tipo=patentes' 
-                        ? 'text-yellow-400 bg-neutral-800/50 font-semibold' 
-                        : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
-                    }`}
+                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${location.search === '?tipo=patentes'
+                      ? 'text-yellow-400 bg-neutral-800/50 font-semibold'
+                      : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                      }`}
                   >
                     Registro de Patentes
                   </NavLink>
                   <NavLink
                     to="/servicos?tipo=projetos"
                     onClick={() => setShowDropdown(false)}
-                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${
-                      location.search === '?tipo=projetos' 
-                        ? 'text-yellow-400 bg-neutral-800/50 font-semibold' 
-                        : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
-                    }`}
+                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${location.search === '?tipo=projetos'
+                      ? 'text-yellow-400 bg-neutral-800/50 font-semibold'
+                      : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                      }`}
                   >
                     Projetos
                   </NavLink>
