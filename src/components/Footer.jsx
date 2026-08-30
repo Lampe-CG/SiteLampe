@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Lightbulb, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,10 +20,10 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-2">
           <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Links Rápidos</h4>
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <NavLink to="/" className="hover:text-yellow-400 hover:text-glow transition-colors">Início</NavLink>
-            <NavLink to="/servicos" className="hover:text-yellow-400 hover:text-glow transition-colors">Serviços</NavLink>
-            <NavLink to="/quem-somos" className="hover:text-yellow-400 hover:text-glow transition-colors">Quem Somos</NavLink>
-            <NavLink to="/contato" className="hover:text-yellow-400 hover:text-glow transition-colors">Contato</NavLink>
+            <NavLink to="/" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Início</NavLink>
+            <NavLink to="/servicos" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Serviços</NavLink>
+            <NavLink to="/quem-somos" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Quem Somos</NavLink>
+            <NavLink to="/contato" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Contato</NavLink>
           </div>
         </div>
 
@@ -35,7 +35,7 @@ export default function Footer() {
               href="https://www.instagram.com/lampebr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-yellow-400 hover:border-yellow-400/40 hover:shadow-[0_0_10px_rgba(250,204,21,0.3)] transition-all duration-300 cursor-pointer"
+              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-[#F8DE62] hover:border-[#F8DE62]/40 hover:shadow-[0_0_10px_rgba(248,222,98,0.4)] hover:drop-shadow-[0_0_8px_rgba(248,222,98,0.6)] transition-all duration-300 cursor-pointer"
               aria-label="Instagram"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,7 +48,7 @@ export default function Footer() {
               href="https://api.whatsapp.com/send?phone=5583987048202"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-yellow-400 hover:border-yellow-400/40 hover:shadow-[0_0_10px_rgba(250,204,21,0.3)] transition-all duration-300 cursor-pointer"
+              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-[#F8DE62] hover:border-[#F8DE62]/40 hover:shadow-[0_0_10px_rgba(248,222,98,0.4)] hover:drop-shadow-[0_0_8px_rgba(248,222,98,0.6)] transition-all duration-300 cursor-pointer"
               aria-label="WhatsApp"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -57,7 +57,7 @@ export default function Footer() {
             </a>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@lampebr.com"
-              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-yellow-400 hover:border-yellow-400/40 hover:shadow-[0_0_10px_rgba(250,204,21,0.3)] transition-all duration-300 cursor-pointer"
+              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-[#F8DE62] hover:border-[#F8DE62]/40 hover:shadow-[0_0_10px_rgba(248,222,98,0.4)] hover:drop-shadow-[0_0_8px_rgba(248,222,98,0.6)] transition-all duration-300 cursor-pointer"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />

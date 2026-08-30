@@ -56,34 +56,43 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex-1 flex flex-col py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden text-neutral-300"
+      className="flex-1 flex flex-col relative overflow-hidden text-neutral-300"
     >
       {/* Visual lighting background */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow-500/5 blur-[160px] pointer-events-none"></div>
 
-      <div className="max-w-5xl mx-auto z-10 w-full space-y-24">
+      {/* ========================================================= */}
+      {/* 1. PRIMEIRA DOBRA: HERO / SEÇÃO PRINCIPAL DE CONTATO     */}
+      {/* ========================================================= */}
+      {/* ALINHAMENTO ESTRUTURAL PADRONIZADO COM SERVIÇOS E QUEM SOMOS */}
+      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-between items-center py-12 px-4 sm:px-6 lg:px-8 w-full z-10">
+        <div className="max-w-5xl mx-auto w-full flex-grow flex flex-col justify-between gap-10">
 
-        {/* SEÇÃO SUPERIOR: "ACENDA SEU NEGÓCIO" */}
-        <div className="space-y-12">
-          {/* Cabeçalho */}
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase">
-              ACENDA SEU <span className="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">NEGÓCIO</span>
+          {/* Cabeçalho da Página Padronizado */}
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide uppercase text-white">
+              ACENDA SEU <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">NEGÓCIO</span>
             </h1>
-            <p className="max-w-xl mx-auto text-neutral-400 text-sm sm:text-base">
+            <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto px-4">
               Entre em contato conosco através dos nossos canais de atendimento ou acenda nossa lâmpada da criatividade.
             </p>
           </div>
 
           {/* Grid de 2 Colunas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto w-full my-auto">
 
-            {/* Coluna Esquerda: Lista de Contatos */}
-            <div className="space-y-6 bg-neutral-900/40 border border-neutral-800/80 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-center h-full min-h-[300px]">
-              <h2 className="text-xl font-bold text-lampe-orange mb-2 uppercase tracking-wide border-b border-neutral-800 pb-3">
+            {/* Coluna Esquerda: Card de Canais de Contato */}
+            {/* AJUSTE DE LARGURA DO CARD AQUI (max-w-xl) E ESPAÇAMENTO (p-8 sm:p-10) */}
+            <div className="max-w-xl w-full mx-auto space-y-6 sm:space-y-7 bg-neutral-900/40 border border-neutral-800/80 rounded-2xl p-8 sm:p-10 backdrop-blur-sm flex flex-col justify-center shadow-xl">
+
+              {/* CONTROLE DE FONTE DO TÍTULO DO CARD (text-2xl sm:text-3xl) */}
+              <h2 className="text-2xl sm:text-3xl font-black text-lampe-orange mb-2 uppercase tracking-wide border-b border-neutral-800 pb-3">
                 Canais de Contato
               </h2>
-              <div className="space-y-5">
+
+              {/* CONTROLE DE FONTE DOS CANAIS DE CONTATO E TAMANHO DOS ÍCONES */}
+              <div className="space-y-5 sm:space-y-6">
+
                 {/* Instagram */}
                 <a
                   href={CONTACT_INFO.instagram.link}
@@ -91,10 +100,12 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group cursor-pointer w-fit"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-yellow-400 group-hover:border-yellow-400 group-hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] transition-all duration-300">
-                    <Instagram className="w-5 h-5 transition-transform group-hover:scale-110" />
+                  {/* CONTROLE DE TAMANHO DO CONTAINER E ÍCONE DO INSTAGRAM */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
+                    <Instagram className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                   </div>
-                  <span className="font-semibold text-neutral-400 group-hover:text-yellow-400 group-hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] transition-all duration-300">
+                  {/* CONTROLE DE FONTE DOS TEXTOS (text-base sm:text-lg lg:text-xl) */}
+                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl">
                     {CONTACT_INFO.instagram.label}
                   </span>
                 </a>
@@ -106,10 +117,12 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group cursor-pointer w-fit"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-yellow-400 group-hover:border-yellow-400 group-hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] transition-all duration-300">
-                    <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
+                  {/* CONTROLE DE TAMANHO DO CONTAINER E ÍCONE DO WHATSAPP */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
+                    <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                   </div>
-                  <span className="font-semibold text-neutral-400 group-hover:text-yellow-400 group-hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] transition-all duration-300">
+                  {/* CONTROLE DE FONTE DOS TEXTOS (text-base sm:text-lg lg:text-xl) */}
+                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl">
                     {CONTACT_INFO.whatsapp.label}
                   </span>
                 </a>
@@ -123,10 +136,12 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 group cursor-pointer w-fit"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-yellow-400 group-hover:border-yellow-400 group-hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] transition-all duration-300">
-                      <Mail className="w-5 h-5 transition-transform group-hover:scale-110" />
+                    {/* CONTROLE DE TAMANHO DO CONTAINER E ÍCONE DE EMAIL */}
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
+                      <Mail className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                     </div>
-                    <span className="font-semibold text-neutral-400 group-hover:text-yellow-400 group-hover:drop-shadow-[0_0_10px_rgba(250,204,21,0.8)] transition-all duration-300 text-sm sm:text-base">
+                    {/* CONTROLE DE FONTE DOS TEXTOS (text-base sm:text-lg lg:text-xl) */}
+                    <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl">
                       {email.label}
                     </span>
                   </a>
@@ -135,29 +150,31 @@ export default function Contact() {
             </div>
 
             {/* Coluna Direita: Lâmpada Interativa */}
-            {/* Coluna Direita: Lâmpada Interativa */}
-            <div className="flex flex-col items-center justify-center text-center h-full min-h-[300px]">
+            <div className="flex flex-col items-center justify-center text-center h-full min-h-[320px]">
               <div
                 onClick={() => setIsLit(!isLit)}
-                className="cursor-pointer p-6 rounded-full transition-colors duration-300 relative group"
+                className="cursor-pointer p-6 sm:p-8 rounded-full transition-colors duration-300 relative group"
+                title="Clique para acender a lâmpada"
               >
+                {/* AJUSTE DE TAMANHO DA LÂMPADA AQUI (w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44) */}
                 <Lightbulb
-                  className={`w-28 h-28 transition-all duration-500 ${isLit
-                    ? 'text-yellow-400 drop-shadow-[0_0_40px_rgba(250,204,21,1)] scale-110'
-                    : 'text-neutral-600 hover:text-yellow-200 hover:drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]'
-                    }`}
+                  className={`w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 transition-all duration-500 ${
+                    isLit
+                      ? 'text-[#F8DE62] drop-shadow-[0_0_40px_rgba(248,222,98,0.85)] scale-110 sm:scale-125'
+                      : 'text-neutral-600 hover:text-[#F8DE62] hover:drop-shadow-[0_0_18px_rgba(248,222,98,0.6)]'
+                  }`}
                 />
               </div>
 
               {/* Mensagem de Confirmação */}
-              <div className="h-8 mt-4">
+              <div className="h-8 mt-2">
                 <AnimatePresence>
                   {isLit && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="text-yellow-400 font-bold text-lg drop-shadow-[0_0_8px_rgba(250,204,21,0.6)] uppercase tracking-widest"
+                      className="text-[#F8DE62] font-bold text-lg sm:text-xl drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] uppercase tracking-widest"
                     >
                       Negócio Aceso!
                     </motion.p>
@@ -168,27 +185,36 @@ export default function Contact() {
 
           </div>
         </div>
+      </section>
 
-        {/* SEÇÃO INFERIOR: "EMPRESAS QUE ACENDERAM SEUS NEGÓCIOS" */}
-        <div className="space-y-10 border-t border-neutral-900 pt-16">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-black text-lampe-orange   tracking-wide uppercase">
-              EMPRESAS QUE <span className="text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]">ACENDERAM</span> SEUS NEGÓCIOS
+      {/* ========================================================= */}
+      {/* 2. SEGUNDA DOBRA: "EMPRESAS QUE ACENDERAM SEUS NEGÓCIOS"  */}
+      {/* ========================================================= */}
+      {/* AJUSTE DE ESPAÇAMENTO SUPERIOR DA SEÇÃO DE EMPRESAS AQUI */}
+      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center pt-10 pb-16 sm:pt-12 sm:pb-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-900 w-full z-10">
+        <div className="max-w-5xl mx-auto w-full space-y-10 sm:space-y-12">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-lampe-orange tracking-wide uppercase">
+              EMPRESAS QUE <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">ACENDERAM</span> SEUS NEGÓCIOS
             </h2>
+            <p className="text-neutral-400 text-sm sm:text-base">
+              Clique nas marcas para acendê-las
+            </p>
           </div>
 
           {/* Grid Flexível de Logos (Sem círculos, com glow no PNG) */}
-          <div className="flex flex-wrap items-center justify-center gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 max-w-5xl mx-auto">
             {CLIENT_LOGOS.map((client) => {
               const isClientLit = litClients.includes(client.id);
               return (
                 <div
                   key={client.id}
                   onClick={() => toggleClient(client.id)}
-                  className={`w-28 sm:w-32 h-20 flex items-center justify-center cursor-pointer transition-all duration-300 ${isClientLit
-                    ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(255,144,80,0.8)]'
-                    : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
-                    }`}
+                  className={`w-28 sm:w-32 h-20 flex items-center justify-center cursor-pointer transition-all duration-300 ${
+                    isClientLit
+                      ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(248,222,98,0.85)]'
+                      : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                  }`}
                   title={client.name}
                 >
                   <img
@@ -198,7 +224,7 @@ export default function Contact() {
                     onError={(e) => {
                       // Fallback em caso de erro da imagem
                       e.target.style.display = 'none';
-                      e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-yellow-400 text-glow whitespace-nowrap">${client.name}</span>`;
+                      e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-[#F8DE62] text-glow whitespace-nowrap">${client.name}</span>`;
                     }}
                   />
                 </div>
@@ -206,8 +232,8 @@ export default function Contact() {
             })}
           </div>
         </div>
+      </section>
 
-      </div>
     </motion.div>
   );
 }

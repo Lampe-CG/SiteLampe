@@ -14,8 +14,8 @@ export default function Navbar() {
     { name: 'Contato', path: '/contato' },
   ];
 
-  const activeLinkClass = "text-yellow-400 text-glow font-bold border-b-2 border-yellow-400 pb-1";
-  const inactiveLinkClass = "text-neutral-400 hover:text-yellow-400 hover:text-glow transition-all duration-300 pb-1 hover:border-b-2 hover:border-yellow-400/50";
+  const activeLinkClass = "text-[#F8DE62] text-glow font-bold border-b-2 border-[#F8DE62] pb-1";
+  const inactiveLinkClass = "text-neutral-400 hover:text-[#F8DE62] hover:text-glow transition-all duration-300 pb-1 hover:border-b-2 hover:border-[#F8DE62]/50";
 
   const isLinkActive = (path) => {
     if (path.startsWith('/servicos')) {
@@ -74,8 +74,8 @@ export default function Navbar() {
                     to="/servicos?tipo=marca"
                     onClick={() => setShowDropdown(false)}
                     className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${location.search === '?tipo=marca' || location.search === ''
-                      ? 'text-yellow-400 bg-neutral-800/50 font-semibold'
-                      : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                      ? 'text-[#F8DE62] bg-neutral-800/50 font-semibold'
+                      : 'text-neutral-400 hover:text-[#F8DE62] hover:bg-neutral-800/40'
                       }`}
                   >
                     Registro de Marca
@@ -84,8 +84,8 @@ export default function Navbar() {
                     to="/servicos?tipo=patentes"
                     onClick={() => setShowDropdown(false)}
                     className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${location.search === '?tipo=patentes'
-                      ? 'text-yellow-400 bg-neutral-800/50 font-semibold'
-                      : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                      ? 'text-[#F8DE62] bg-neutral-800/50 font-semibold'
+                      : 'text-neutral-400 hover:text-[#F8DE62] hover:bg-neutral-800/40'
                       }`}
                   >
                     Registro de Patentes
@@ -94,8 +94,8 @@ export default function Navbar() {
                     to="/servicos?tipo=projetos"
                     onClick={() => setShowDropdown(false)}
                     className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${location.search === '?tipo=projetos'
-                      ? 'text-yellow-400 bg-neutral-800/50 font-semibold'
-                      : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                      ? 'text-[#F8DE62] bg-neutral-800/50 font-semibold'
+                      : 'text-neutral-400 hover:text-[#F8DE62] hover:bg-neutral-800/40'
                       }`}
                   >
                     Projetos
@@ -118,7 +118,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-neutral-400 hover:text-yellow-400 hover:text-glow focus:outline-none transition-all duration-300 cursor-pointer"
+            className="text-neutral-400 hover:text-[#F8DE62] hover:text-glow focus:outline-none transition-all duration-300 cursor-pointer"
             aria-label="Toggle Menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -136,7 +136,7 @@ export default function Navbar() {
                   <NavLink
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`text-lg py-2 ${isLinkActive(link.path) ? 'text-yellow-400 font-bold border-l-4 border-yellow-400 pl-3' : 'text-neutral-400 pl-3 hover:text-yellow-400 transition-all'}`}
+                    className={`text-lg py-2 ${isLinkActive(link.path) ? 'text-[#F8DE62] font-bold border-l-4 border-[#F8DE62] pl-3' : 'text-neutral-400 pl-3 hover:text-[#F8DE62] transition-all'}`}
                   >
                     Serviços
                   </NavLink>
@@ -144,21 +144,21 @@ export default function Navbar() {
                     <NavLink
                       to="/servicos?tipo=marca"
                       onClick={() => setIsOpen(false)}
-                      className={`py-1 transition-all text-sm ${location.search === '?tipo=marca' || location.search === '' ? 'text-yellow-400 font-bold' : 'text-neutral-400 hover:text-yellow-400'}`}
+                      className={`py-1 transition-all text-sm ${location.search === '?tipo=marca' || location.search === '' ? 'text-[#F8DE62] font-bold' : 'text-neutral-400 hover:text-[#F8DE62]'}`}
                     >
                       Registro de Marca
                     </NavLink>
                     <NavLink
                       to="/servicos?tipo=patentes"
                       onClick={() => setIsOpen(false)}
-                      className={`py-1 transition-all text-sm ${location.search === '?tipo=patentes' ? 'text-yellow-400 font-bold' : 'text-neutral-400 hover:text-yellow-400'}`}
+                      className={`py-1 transition-all text-sm ${location.search === '?tipo=patentes' ? 'text-[#F8DE62] font-bold' : 'text-neutral-400 hover:text-[#F8DE62]'}`}
                     >
                       Registro de Patentes
                     </NavLink>
                     <NavLink
                       to="/servicos?tipo=projetos"
                       onClick={() => setIsOpen(false)}
-                      className={`py-1 transition-all text-sm ${location.search === '?tipo=projetos' ? 'text-yellow-400 font-bold' : 'text-neutral-400 hover:text-yellow-400'}`}
+                      className={`py-1 transition-all text-sm ${location.search === '?tipo=projetos' ? 'text-[#F8DE62] font-bold' : 'text-neutral-400 hover:text-[#F8DE62]'}`}
                     >
                       Projetos
                     </NavLink>
@@ -168,7 +168,7 @@ export default function Navbar() {
                 <NavLink
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg py-2 ${isLinkActive(link.path) ? 'text-yellow-400 font-bold border-l-4 border-yellow-400 pl-3' : 'text-neutral-400 pl-3 hover:text-yellow-400 hover:border-l-4 hover:border-yellow-400/50 transition-all'}`}
+                  className={`text-lg py-2 ${isLinkActive(link.path) ? 'text-[#F8DE62] font-bold border-l-4 border-[#F8DE62] pl-3' : 'text-neutral-400 pl-3 hover:text-[#F8DE62] hover:border-l-4 hover:border-[#F8DE62]/50 transition-all'}`}
                 >
                   {link.name}
                 </NavLink>

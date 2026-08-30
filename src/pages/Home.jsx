@@ -132,7 +132,7 @@ export default function Home() {
               className="relative py-4"
             >
               <motion.h1
-                className="text-7xl sm:text-9xl md:text-[11rem] font-black tracking-widest text-yellow-400 select-none cursor-pointer drop-shadow-[0_0_35px_rgba(250,204,21,0.9)] hover:drop-shadow-[0_0_55px_rgba(250,204,21,1)] transition-all duration-300"
+                className="text-7xl sm:text-9xl md:text-[11rem] font-black tracking-widest text-[#F8DE62] select-none cursor-pointer drop-shadow-[0_0_35px_rgba(248,222,98,0.85)] hover:drop-shadow-[0_0_55px_rgba(248,222,98,1)] transition-all duration-300"
                 animate={{
                   scale: [1, 1.02, 1],
                 }}
@@ -158,7 +158,7 @@ export default function Home() {
               <Link
                 to="/servicos"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_35px_rgba(250,204,21,0.6)] cursor-pointer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#F8DE62] hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(248,222,98,0.4)] hover:shadow-[0_0_35px_rgba(248,222,98,0.7)] hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] cursor-pointer"
               >
                 CONHEÇA NOSSOS SERVIÇOS!
                 <ArrowRight className="w-5 h-5 text-black" />

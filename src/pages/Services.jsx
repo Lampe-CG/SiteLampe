@@ -60,11 +60,11 @@ export default function Services() {
 
       <div className="max-w-[1450px] w-full mx-auto z-10 flex-grow flex flex-col justify-center gap-12">
         {/* Cabeçalho da Página */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
-            NOSSOS <span className="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">SERVIÇOS</span>
+        <div className="text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide uppercase text-white">
+            NOSSOS <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">SERVIÇOS</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg">
+          <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto px-4">
             Oferecemos suporte jurídico e técnico robusto e especializado para registrar suas criações e proteger o valor do seu negócio.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function Services() {
           >
             <button
               onClick={handleNavigateToContact}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_35px_rgba(250,204,21,0.6)] cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#F8DE62] hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(248,222,98,0.4)] hover:shadow-[0_0_35px_rgba(248,222,98,0.7)] hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] cursor-pointer"
             >
               FALE CONOSCO
               <ArrowRight className="w-5 h-5 text-black" />

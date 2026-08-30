@@ -25,25 +25,25 @@ export default function About() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex-1 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8 text-neutral-300 relative overflow-hidden"
+      className="flex-1 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 text-neutral-300 relative overflow-hidden min-h-[calc(100vh-80px)] justify-between"
     >
       {/* Visual lighting background */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow-500/5 blur-[160px] pointer-events-none"></div>
 
-      <div className="max-w-4xl w-full mx-auto z-10 space-y-16">
+      <div className="max-w-4xl w-full mx-auto z-10 flex-grow flex flex-col justify-between gap-10">
 
-        {/* Title */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase">
-            QUEM <span className="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.4)]">SOMOS</span>
+        {/* Cabeçalho Padronizado */}
+        <div className="text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide uppercase text-white">
+            QUEM <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">SOMOS</span>
           </h1>
-          <p className="max-w-xl mx-auto text-neutral-400 text-sm sm:text-base">
+          <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto px-4">
             Conheça as mentes brilhantes por trás da proteção das maiores ideias e marcas nacionais.
           </p>
         </div>
 
         {/* 3-Column Layout (Pedro - Lightbulb - Lara) */}
-        <div className="grid grid-cols-3 items-center gap-4 sm:gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 items-center gap-4 sm:gap-8 max-w-3xl mx-auto w-full my-auto">
 
           {/* Column 1: Pedro */}
           <div
@@ -55,13 +55,18 @@ export default function About() {
               <img
                 src="/Pedro.png"
                 alt="Pedro"
-                className={`w-auto max-h-full object-contain ${selectedPerson === 'pedro'
-                  ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(250,204,21,0.85)] scale-105 transition-all duration-300'
-                  : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0'
-                  }`}
+                className={`w-auto max-h-full object-contain ${
+                  selectedPerson === 'pedro'
+                    ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(248,222,98,0.85)] scale-105 transition-all duration-300'
+                    : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                }`}
               />
             </div>
-            <span className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${selectedPerson === 'pedro' ? 'text-yellow-400' : 'text-neutral-500'}`}>
+            <span
+              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${
+                selectedPerson === 'pedro' ? 'text-[#F8DE62]' : 'text-neutral-500'
+              }`}
+            >
               Pedro
             </span>
           </div>
@@ -71,10 +76,11 @@ export default function About() {
             <Lightbulb
               size={72}
               onClick={() => setIsLit(!isLit)}
-              className={`cursor-pointer ${isLit
-                ? 'text-yellow-400 drop-shadow-[0_0_30px_rgba(250,204,21,1)] scale-110 transition-all duration-300'
-                : 'text-neutral-600 hover:text-neutral-400 transition-colors duration-300'
-                }`}
+              className={`cursor-pointer ${
+                isLit
+                  ? 'text-[#F8DE62] drop-shadow-[0_0_30px_rgba(248,222,98,0.85)] scale-110 transition-all duration-300'
+                  : 'text-neutral-600 hover:text-[#F8DE62] hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)] transition-all duration-300'
+              }`}
             />
           </div>
 
@@ -88,13 +94,18 @@ export default function About() {
               <img
                 src="/Lara.png"
                 alt="Lara"
-                className={`w-auto max-h-full object-contain ${selectedPerson === 'lara'
-                  ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(250,204,21,0.85)] scale-105 transition-all duration-300'
-                  : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0'
-                  }`}
+                className={`w-auto max-h-full object-contain ${
+                  selectedPerson === 'lara'
+                    ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(248,222,98,0.85)] scale-105 transition-all duration-300'
+                    : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                }`}
               />
             </div>
-            <span className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${selectedPerson === 'lara' ? 'text-yellow-400' : 'text-neutral-500'}`}>
+            <span
+              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${
+                selectedPerson === 'lara' ? 'text-[#F8DE62]' : 'text-neutral-500'
+              }`}
+            >
               Lara
             </span>
           </div>
@@ -118,7 +129,7 @@ export default function About() {
                 <h3 className="text-xl sm:text-2xl font-black text-white">
                   {team[selectedPerson].name}
                 </h3>
-                <span className="text-xs sm:text-sm text-yellow-400 font-medium tracking-wide">
+                <span className="text-xs sm:text-sm text-[#F8DE62] font-medium tracking-wide">
                   {team[selectedPerson].role}
                 </span>
               </div>
