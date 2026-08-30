@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Lightbulb, Menu, X } from 'lucide-react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { name: 'Início', path: '/' },
-    { name: 'Serviços', path: '/servicos' },
+    { name: 'Serviços', path: '/servicos?tipo=marca' },
     { name: 'Quem Somos', path: '/quem-somos' },
     { name: 'Contato', path: '/contato' },
   ];
@@ -15,11 +17,18 @@ export default function Navbar() {
   const activeLinkClass = "text-yellow-400 text-glow font-bold border-b-2 border-yellow-400 pb-1";
   const inactiveLinkClass = "text-neutral-400 hover:text-yellow-400 hover:text-glow transition-all duration-300 pb-1 hover:border-b-2 hover:border-yellow-400/50";
 
+  const isLinkActive = (path) => {
+    if (path.startsWith('/servicos')) {
+      return location.pathname.startsWith('/servicos');
+    }
+    return location.pathname === path;
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-neutral-900 w-full px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20">
 
-        {/* Brand/Logo Section */}
+        {/* Logo / Marca */}
         <NavLink to="/" className="flex items-center gap-3 focus:outline-none">
           <img
             src="/lampe-logo.png"
@@ -42,21 +51,82 @@ export default function Navbar() {
         </NavLink>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 h-full">
           {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                isActive ? activeLinkClass : inactiveLinkClass
-              }
-            >
-              {link.name}
-            </NavLink>
+            link.path.startsWith('/servicos') ? (
+              <div
+                key={link.path}
+                className="relative flex items-center h-full cursor-pointer group"
+                onMouseEnter={() => setShowDropdown(true)}
+                onMouseLeave={() => setShowDropdown(false)}
+              >
+                <NavLink
+                  to={link.path}
+                  onClick={() => setShowDropdown(false)}
+                  className={isLinkActive(link.path) ? activeLinkClass : inactiveLinkClass}
+                >
+                  Serviços
+                </NavLink>
+
+                {/* Submenu Dropdown com Hover Bridge */}
+                <div 
+                  className={`absolute top-[70px] left-1/2 -translate-x-1/2 w-60 bg-[#121214] border border-neutral-800 rounded-xl shadow-2xl py-2 z-50 transition-all duration-300 transform ${
+                    showDropdown 
+                      ? 'opacity-100 visible translate-y-0 pointer-events-auto' 
+                      : 'opacity-0 invisible translate-y-2 pointer-events-none'
+                  }`}
+                >
+                  {/* Hover Bridge: área invisível conectando o link ao dropdown */}
+                  <div className="absolute -top-4 left-0 w-full h-4 bg-transparent" />
+
+                  <NavLink
+                    to="/servicos?tipo=marca"
+                    onClick={() => setShowDropdown(false)}
+                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${
+                      location.search === '?tipo=marca' || location.search === '' 
+                        ? 'text-yellow-400 bg-neutral-800/50 font-semibold' 
+                        : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                    }`}
+                  >
+                    Registro de Marca
+                  </NavLink>
+                  <NavLink
+                    to="/servicos?tipo=patentes"
+                    onClick={() => setShowDropdown(false)}
+                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${
+                      location.search === '?tipo=patentes' 
+                        ? 'text-yellow-400 bg-neutral-800/50 font-semibold' 
+                        : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                    }`}
+                  >
+                    Registro de Patentes
+                  </NavLink>
+                  <NavLink
+                    to="/servicos?tipo=projetos"
+                    onClick={() => setShowDropdown(false)}
+                    className={`block px-4 py-3 text-sm rounded-lg mx-2 transition-colors font-medium ${
+                      location.search === '?tipo=projetos' 
+                        ? 'text-yellow-400 bg-neutral-800/50 font-semibold' 
+                        : 'text-neutral-400 hover:text-yellow-400 hover:bg-neutral-800/40'
+                    }`}
+                  >
+                    Projetos
+                  </NavLink>
+                </div>
+              </div>
+            ) : (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={isLinkActive(link.path) ? activeLinkClass : inactiveLinkClass}
+              >
+                {link.name}
+              </NavLink>
+            )
           ))}
         </div>
 
-        {/* Hamburger Menu Icon */}
+        {/* Menu Hambúrguer (Mobile) */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -68,20 +138,54 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Menu Dropdown Mobile */}
       {isOpen && (
-        <div className="md:hidden bg-black/95 border-b border-neutral-900 absolute left-0 w-full px-6 py-6 space-y-4 flex flex-col transition-all duration-300">
+        <div className="md:hidden bg-black/95 border-b border-neutral-900 absolute left-0 w-full px-6 py-6 space-y-4 flex flex-col transition-all duration-300 z-50">
           {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `text-lg py-2 ${isActive ? 'text-yellow-400 font-bold border-l-4 border-yellow-400 pl-3' : 'text-neutral-400 pl-3 hover:text-yellow-400 hover:border-l-4 hover:border-yellow-400/50 transition-all'}`
-              }
-            >
-              {link.name}
-            </NavLink>
+            <React.Fragment key={link.path}>
+              {link.path.startsWith('/servicos') ? (
+                <div className="flex flex-col space-y-2">
+                  <NavLink
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-lg py-2 ${isLinkActive(link.path) ? 'text-yellow-400 font-bold border-l-4 border-yellow-400 pl-3' : 'text-neutral-400 pl-3 hover:text-yellow-400 transition-all'}`}
+                  >
+                    Serviços
+                  </NavLink>
+                  <div className="pl-6 flex flex-col space-y-2 border-l border-neutral-800 ml-3">
+                    <NavLink
+                      to="/servicos?tipo=marca"
+                      onClick={() => setIsOpen(false)}
+                      className={`py-1 transition-all text-sm ${location.search === '?tipo=marca' || location.search === '' ? 'text-yellow-400 font-bold' : 'text-neutral-400 hover:text-yellow-400'}`}
+                    >
+                      Registro de Marca
+                    </NavLink>
+                    <NavLink
+                      to="/servicos?tipo=patentes"
+                      onClick={() => setIsOpen(false)}
+                      className={`py-1 transition-all text-sm ${location.search === '?tipo=patentes' ? 'text-yellow-400 font-bold' : 'text-neutral-400 hover:text-yellow-400'}`}
+                    >
+                      Registro de Patentes
+                    </NavLink>
+                    <NavLink
+                      to="/servicos?tipo=projetos"
+                      onClick={() => setIsOpen(false)}
+                      className={`py-1 transition-all text-sm ${location.search === '?tipo=projetos' ? 'text-yellow-400 font-bold' : 'text-neutral-400 hover:text-yellow-400'}`}
+                    >
+                      Projetos
+                    </NavLink>
+                  </div>
+                </div>
+              ) : (
+                <NavLink
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-lg py-2 ${isLinkActive(link.path) ? 'text-yellow-400 font-bold border-l-4 border-yellow-400 pl-3' : 'text-neutral-400 pl-3 hover:text-yellow-400 hover:border-l-4 hover:border-yellow-400/50 transition-all'}`}
+                >
+                  {link.name}
+                </NavLink>
+              )}
+            </React.Fragment>
           ))}
         </div>
       )}

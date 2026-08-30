@@ -160,7 +160,7 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_35px_rgba(250,204,21,0.6)] cursor-pointer"
               >
-                REGISTRE JÁ A SUA MARCA!
+                CONHEÇA NOSSOS SERVIÇOS!
                 <ArrowRight className="w-5 h-5 text-black" />
               </Link>
             </motion.div>
