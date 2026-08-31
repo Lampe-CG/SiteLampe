@@ -7,5 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/Lampe-CG/SiteLampe/',
+  base: '/SiteLampe/',
 })  
