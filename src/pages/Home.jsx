@@ -50,16 +50,16 @@ export default function Home() {
               Inovação, Proteção e Propriedade Intelectual
             </h2>
 
-            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+              A LAMPE® nasceu com o propósito de transformar ideias em realidade, ajudando empresas a converterem suas marcas e produtos em propriedade intelectual sólida. Atuando desde 2021 com foco estratégico na proteção e valorização de marcas, negócios e ativos intangíveis, a empresa une rigor jurídico e visão de negócios para transformar inovação em segurança, exclusividade e valor de mercado.
             </p>
 
-            <p className="text-lg lg:text-xl text-neutral-300 leading-relaxed">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+              Fundada por uma Mestre em Desenvolvimento Regional pela UEPB e pesquisador com atuação de destaque no Programa Institucional de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação na UFCG, a LAMPE® possui dezenas de marcas registradas com sucesso e 3 patentes publicadas nas áreas de tecnologias embarcadas e desenvolvimento de software.
             </p>
 
             <p className="text-base text-neutral-400 leading-relaxed">
-              Mauris ultrices felis purus, sed hendrerit enim mattis ut. Donec pretium erat at feugiat tempor. Ut enim ad minim veniam, quis nostrud exercitation.
+              Essa bagagem multidisciplinar garante uma entrega única, que compreende a fundo tanto a engenharia por trás do produto quanto a estratégia legal para protegê-lo.
             </p>
           </motion.div>
         </section>
