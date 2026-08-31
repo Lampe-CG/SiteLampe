@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Logo / Marca */}
         <NavLink to="/" className="flex items-center gap-3 focus:outline-none">
           <img
-            src="/lampe-logo.png"
+            src={`${import.meta.env.BASE_URL}lampe-logo.png`}
             alt="LAMPE"
             className="h-10 sm:h-12 w-auto object-contain hover:scale-[1.02] transition-transform duration-300"
             onError={(e) => {

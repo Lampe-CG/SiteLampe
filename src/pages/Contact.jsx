@@ -18,19 +18,19 @@ const CONTACT_INFO = {
 };
 
 const CLIENT_LOGOS = [
-  { id: 1, name: 'CNV', img: '/logotipo-clientes/cnv-logo.png' },
-  { id: 2, name: 'Lunaire', img: '/logotipo-clientes/lunaire-logo.png' },
-  { id: 3, name: 'Organizare', img: '/logotipo-clientes/organizare-logo.png' },
-  { id: 4, name: 'Paulino Advogados', img: '/logotipo-clientes/paulino-advogados-logo.png' },
-  { id: 5, name: 'Paulino Veículos', img: '/logotipo-clientes/paulino-veiculos-logo.png' },
-  { id: 6, name: 'Pierre Veículos', img: '/logotipo-clientes/pierre-veiculos-logo.png' },
-  { id: 7, name: 'Protagon', img: '/logotipo-clientes/protagon-logo.png' },
-  { id: 8, name: 'Rava', img: '/logotipo-clientes/rava-logo.png' },
-  { id: 9, name: 'somart', img: '/logotipo-clientes/somart-logo.png' },
-  { id: 10, name: 'Talisma', img: '/logotipo-clientes/talisma-logo.png' },
-  { id: 11, name: 'TI Avançado', img: '/logotipo-clientes/ti-avançado-logo.png' },
-  { id: 12, name: 'Trio da Tomate', img: '/logotipo-clientes/trio-da-tomate-logo.png' },
-  { id: 13, name: 'Eu tenho a Senha', img: '/logotipo-clientes/eu-tenho-a-senha-logo.png' },
+  { id: 1, name: 'CNV', img: `${import.meta.env.BASE_URL}logotipo-clientes/cnv-logo.png` },
+  { id: 2, name: 'Lunaire', img: `${import.meta.env.BASE_URL}logotipo-clientes/lunaire-logo.png` },
+  { id: 3, name: 'Organizare', img: `${import.meta.env.BASE_URL}logotipo-clientes/organizare-logo.png` },
+  { id: 4, name: 'Paulino Advogados', img: `${import.meta.env.BASE_URL}logotipo-clientes/paulino-advogados-logo.png` },
+  { id: 5, name: 'Paulino Veículos', img: `${import.meta.env.BASE_URL}logotipo-clientes/paulino-veiculos-logo.png` },
+  { id: 6, name: 'Pierre Veículos', img: `${import.meta.env.BASE_URL}logotipo-clientes/pierre-veiculos-logo.png` },
+  { id: 7, name: 'Protagon', img: `${import.meta.env.BASE_URL}logotipo-clientes/protagon-logo.png` },
+  { id: 8, name: 'Rava', img: `${import.meta.env.BASE_URL}logotipo-clientes/rava-logo.png` },
+  { id: 9, name: 'somart', img: `${import.meta.env.BASE_URL}logotipo-clientes/somart-logo.png` },
+  { id: 10, name: 'Talisma', img: `${import.meta.env.BASE_URL}logotipo-clientes/talisma-logo.png` },
+  { id: 11, name: 'TI Avançado', img: `${import.meta.env.BASE_URL}logotipo-clientes/ti-avançado-logo.png` },
+  { id: 12, name: 'Trio da Tomate', img: `${import.meta.env.BASE_URL}logotipo-clientes/trio-da-tomate-logo.png` },
+  { id: 13, name: 'Eu tenho a Senha', img: `${import.meta.env.BASE_URL}logotipo-clientes/eu-tenho-a-senha-logo.png` },
 ];
 
 export default function Contact() {

@@ -53,7 +53,7 @@ export default function About() {
           >
             <div className="h-72 sm:h-80 md:h-[350px] flex items-end justify-center">
               <img
-                src="/Pedro.png"
+                src={`${import.meta.env.BASE_URL}Pedro.png`}
                 alt="Pedro"
                 className={`w-auto max-h-full object-contain ${
                   selectedPerson === 'pedro'
@@ -92,7 +92,7 @@ export default function About() {
           >
             <div className="h-72 sm:h-80 md:h-[350px] flex items-end justify-center">
               <img
-                src="/Lara.png"
+                src={`${import.meta.env.BASE_URL}Lara.png`}
                 alt="Lara"
                 className={`w-auto max-h-full object-contain ${
                   selectedPerson === 'lara'

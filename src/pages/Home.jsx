@@ -132,7 +132,7 @@ export default function Home() {
               className="relative py-4"
             >
               <img
-                src="/lampe-logo-amarelo.png"
+                src={`${import.meta.env.BASE_URL}lampe-logo-amarelo.png`}
                 alt="LAMPE"
                 className="h-24 sm:h-32 md:h-40 w-auto mx-auto block drop-shadow-[0_0_20px_rgba(248,222,98,0.6)] hover:drop-shadow-[0_0_35px_rgba(248,222,98,0.95)] hover:scale-105 transition-all duration-300 cursor-pointer select-none"
               />
