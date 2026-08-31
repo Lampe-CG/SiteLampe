@@ -7,7 +7,7 @@ const SERVICES_DATA = {
   marca: {
     title: 'REGISTRO DE MARCA',
     videoTitle: 'Vídeo Explicativo - Registro de Marca',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1',
+    videoUrl: '', // INSERIR VIDEO
     paragraphs: [
       'O registro de marca é o único meio legal de garantir a exclusividade do uso do seu nome, logo ou símbolo comercial em todo o território nacional. Proteja a identidade do seu negócio contra cópias e concorrência desleal.',
       'Acompanhamos todo o trâmite perante o INPI, desde a análise de viabilidade e busca de anterioridade até a concessão definitiva do certificado de registro da sua marca.'
@@ -16,7 +16,7 @@ const SERVICES_DATA = {
   patentes: {
     title: 'REGISTRO DE PATENTES',
     videoTitle: 'Vídeo Explicativo - Registro de Patentes',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1',
+    videoUrl: '', // INSERIR VIDEO
     paragraphs: [
       'Garanta a propriedade industrial e o monopólio temporário sobre invenções e modelos de utilidade. O registro de patente confere segurança jurídica e valor de mercado para sua solução tecnológica.',
       'Prestamos consultoria especializada na redação de relatórios descritivos, reivindicações técnicas e acompanhamento do processo patentário junto ao órgão regulador.'
@@ -25,7 +25,7 @@ const SERVICES_DATA = {
   projetos: {
     title: 'DESENVOLVIMENTO DE PROJETOS',
     videoTitle: 'Vídeo Explicativo - Desenvolvimento de Projetos',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1',
+    videoUrl: '', // INSERIR VIDEO
     paragraphs: [
       'Suporte técnico e consultivo para transformar ideias inovadoras em projetos estruturados, protótipos funcionais e modelos industriais viáveis técnica e comercialmente.',
       'Oferecemos orientação para engenharia de produto, design industrial e conformidade técnica necessária para a validação e posterior proteção legal da sua criação.'

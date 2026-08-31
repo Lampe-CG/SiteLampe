@@ -31,7 +31,7 @@ export default function Home() {
           >
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/MYTmE2brxqg?si=hAjwVk2VUxMpsR_e+"
+              src="" // INSERIR VIDEO
               title="LAMPE Apresentação"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -131,21 +131,11 @@ export default function Home() {
               transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
               className="relative py-4"
             >
-              <motion.h1
-                className="text-7xl sm:text-9xl md:text-[11rem] font-black tracking-widest text-[#F8DE62] select-none cursor-pointer drop-shadow-[0_0_35px_rgba(248,222,98,0.85)] hover:drop-shadow-[0_0_55px_rgba(248,222,98,1)] transition-all duration-300"
-                animate={{
-                  scale: [1, 1.02, 1],
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                LAMPE
-              </motion.h1>
+              <img
+                src="/lampe-logo-amarelo.png"
+                alt="LAMPE"
+                className="h-24 sm:h-32 md:h-40 w-auto mx-auto block drop-shadow-[0_0_20px_rgba(248,222,98,0.6)] hover:drop-shadow-[0_0_35px_rgba(248,222,98,0.95)] hover:scale-105 transition-all duration-300 cursor-pointer select-none"
+              />
             </motion.div>
 
             <motion.div
