@@ -55,17 +55,15 @@ export default function About() {
               <img
                 src={`${import.meta.env.BASE_URL}Pedro.png`}
                 alt="Pedro"
-                className={`w-auto max-h-full object-contain ${
-                  selectedPerson === 'pedro'
+                className={`w-auto max-h-full object-contain ${selectedPerson === 'pedro'
                     ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(248,222,98,0.85)] scale-105 transition-all duration-300'
                     : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
-                }`}
+                  }`}
               />
             </div>
             <span
-              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${
-                selectedPerson === 'pedro' ? 'text-[#F8DE62]' : 'text-neutral-500'
-              }`}
+              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${selectedPerson === 'pedro' ? 'text-[#F8DE62]' : 'text-neutral-500'
+                }`}
             >
               Pedro
             </span>
@@ -76,11 +74,10 @@ export default function About() {
             <Lightbulb
               size={72}
               onClick={() => setIsLit(!isLit)}
-              className={`cursor-pointer ${
-                isLit
+              className={`cursor-pointer ${isLit
                   ? 'text-[#F8DE62] drop-shadow-[0_0_30px_rgba(248,222,98,0.85)] scale-110 transition-all duration-300'
                   : 'text-neutral-600 hover:text-[#F8DE62] hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)] transition-all duration-300'
-              }`}
+                }`}
             />
           </div>
 
@@ -94,17 +91,15 @@ export default function About() {
               <img
                 src={`${import.meta.env.BASE_URL}Lara.png`}
                 alt="Lara"
-                className={`w-auto max-h-full object-contain ${
-                  selectedPerson === 'lara'
+                className={`w-auto max-h-full object-contain ${selectedPerson === 'lara'
                     ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(248,222,98,0.85)] scale-105 transition-all duration-300'
                     : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
-                }`}
+                  }`}
               />
             </div>
             <span
-              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${
-                selectedPerson === 'lara' ? 'text-[#F8DE62]' : 'text-neutral-500'
-              }`}
+              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${selectedPerson === 'lara' ? 'text-[#F8DE62]' : 'text-neutral-500'
+                }`}
             >
               Lara
             </span>
@@ -133,7 +128,7 @@ export default function About() {
                   {team[selectedPerson].role}
                 </span>
               </div>
-              <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-neutral-400 text-sm sm:text-base leading-relaxed text-justify">
                 {team[selectedPerson].desc}
               </p>
             </motion.div>

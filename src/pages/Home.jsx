@@ -44,7 +44,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="space-y-6 flex flex-col justify-center h-full"
+            className="space-y-6 flex flex-col justify-center h-full text-justify"
           >
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-lampe-orange leading-tight">
               Inovação, Proteção e Propriedade Intelectual

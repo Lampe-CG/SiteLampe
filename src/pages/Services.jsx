@@ -64,7 +64,7 @@ export default function Services() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide uppercase text-white">
             NOSSOS <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">SERVIÇOS</span>
           </h1>
-          <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto px-4">
+          <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-2xl mx-auto px-4 ">
             Oferecemos suporte jurídico e técnico robusto e especializado para registrar suas criações e proteger o valor do seu negócio.
           </p>
         </div>
@@ -93,13 +93,13 @@ export default function Services() {
 
             {/* Coluna da Direita - Conteúdo Textual Exclusivo */}
             <div className="space-y-6 flex flex-col justify-center h-full">
-              <h2 className="colortext-3xl lg:text-4xl xl:text-5xl font-bold text-lampe-orange leading-tight">
+              <h2 className="colortext-3xl lg:text-4xl xl:text-5xl font-bold text-lampe-orange leading-tight ">
                 {data.title}
               </h2>
               {data.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className={index === 0 ? "text-lg lg:text-xl text-neutral-300 leading-relaxed" : "text-base text-neutral-400 leading-relaxed"}
+                  className={index === 0 ? "text-lg lg:text-xl text-neutral-300 leading-relaxed text-justify" : "text-justify text-base text-neutral-400 leading-relaxed"}
                 >
                   {paragraph}
                 </p>
