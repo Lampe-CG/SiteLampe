@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, MessageCircle, Mail, Lightbulb } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Instagram, MessageCircle, Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 // 1. ESTRUTURA DE DADOS E PLACEHOLDERS
 const CONTACT_INFO = {
@@ -13,8 +13,6 @@ const CONTACT_INFO = {
     link: 'https://api.whatsapp.com/send?phone=5583987048202',
   },
   emails: [
-    { label: 'pedro@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=pedro@lampebr.com' },
-    { label: 'lara@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=lara@lampebr.com' },
     { label: 'contato@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=contato@lampebr.com' },
   ],
 };
@@ -36,10 +34,11 @@ const CLIENT_LOGOS = [
 ];
 
 export default function Contact() {
-  // 2. ESTADO DA LÂMPADA INTERATIVA
-  const [isLit, setIsLit] = useState(false);
+  // ESTADOS DO FORMULÁRIO
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [result, setResult] = useState({ message: '', isSuccess: false });
 
-  // 3. ESTADO DOS CLIENTES ACESOS (Array de IDs)
+  // ESTADO DOS CLIENTES ACESOS (Array de IDs)
   const [litClients, setLitClients] = useState([]);
 
   const toggleClient = (id) => {
@@ -47,6 +46,45 @@ export default function Contact() {
       setLitClients(litClients.filter((clientId) => clientId !== id));
     } else {
       setLitClients([...litClients, id]);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult({ message: '', isSuccess: false });
+
+    const form = event.target;
+    const formData = new FormData(form);
+    formData.append("access_key", "df10a314-bf1e-4d72-93e6-21dc75c19a40");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        form.reset();
+        setResult({
+          message: "Mensagem enviada com sucesso!",
+          isSuccess: true,
+        });
+      } else {
+        setResult({
+          message: data.message || "Ocorreu um erro ao enviar a mensagem.",
+          isSuccess: false,
+        });
+      }
+    } catch (error) {
+      setResult({
+        message: "Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.",
+        isSuccess: false,
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -64,7 +102,6 @@ export default function Contact() {
       {/* ========================================================= */}
       {/* 1. PRIMEIRA DOBRA: HERO / SEÇÃO PRINCIPAL DE CONTATO     */}
       {/* ========================================================= */}
-      {/* ALINHAMENTO ESTRUTURAL PADRONIZADO COM SERVIÇOS E QUEM SOMOS */}
       <section className="min-h-[calc(100vh-80px)] flex flex-col justify-between items-center py-12 px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="max-w-5xl mx-auto w-full flex-grow flex flex-col justify-between gap-10">
 
@@ -74,25 +111,21 @@ export default function Contact() {
               ACENDA SEU <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">NEGÓCIO</span>
             </h1>
             <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto px-4">
-              Entre em contato conosco através dos nossos canais de atendimento ou acenda nossa lâmpada da criatividade.
+              Entre em contato conosco através dos nossos canais de atendimento ou envie uma mensagem diretamente pelo formulário.
             </p>
           </div>
 
           {/* Grid de 2 Colunas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto w-full my-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-5xl mx-auto w-full my-auto">
 
             {/* Coluna Esquerda: Card de Canais de Contato */}
-            {/* AJUSTE DE LARGURA DO CARD AQUI (max-w-xl) E ESPAÇAMENTO (p-8 sm:p-10) */}
-            <div className="max-w-xl w-full mx-auto space-y-6 sm:space-y-7 bg-neutral-900/40 border border-neutral-800/80 rounded-2xl p-8 sm:p-10 backdrop-blur-sm flex flex-col justify-center shadow-xl">
+            <div className="w-full bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-between shadow-xl">
 
-              {/* CONTROLE DE FONTE DO TÍTULO DO CARD (text-2xl sm:text-3xl) */}
-              <h2 className="text-2xl sm:text-3xl font-black text-lampe-orange mb-2 uppercase tracking-wide border-b border-neutral-800 pb-3">
+              <h2 className="text-2xl sm:text-3xl font-black text-lampe-orange mb-6 uppercase tracking-wide border-b border-neutral-800 pb-3">
                 Canais de Contato
               </h2>
 
-              {/* CONTROLE DE FONTE DOS CANAIS DE CONTATO E TAMANHO DOS ÍCONES */}
-              <div className="space-y-5 sm:space-y-6">
-
+              <div className="flex-1 flex flex-col justify-center space-y-6 sm:space-y-7">
                 {/* Instagram */}
                 <a
                   href={CONTACT_INFO.instagram.link}
@@ -100,12 +133,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group cursor-pointer w-fit"
                 >
-                  {/* CONTROLE DE TAMANHO DO CONTAINER E ÍCONE DO INSTAGRAM */}
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
                     <Instagram className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                   </div>
-                  {/* CONTROLE DE FONTE DOS TEXTOS (text-base sm:text-lg lg:text-xl) */}
-                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl">
+                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-xl lg:text-2xl">
                     {CONTACT_INFO.instagram.label}
                   </span>
                 </a>
@@ -117,12 +148,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group cursor-pointer w-fit"
                 >
-                  {/* CONTROLE DE TAMANHO DO CONTAINER E ÍCONE DO WHATSAPP */}
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
                     <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                   </div>
-                  {/* CONTROLE DE FONTE DOS TEXTOS (text-base sm:text-lg lg:text-xl) */}
-                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl">
+                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-xl lg:text-2xl">
                     {CONTACT_INFO.whatsapp.label}
                   </span>
                 </a>
@@ -136,12 +165,10 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 group cursor-pointer w-fit"
                   >
-                    {/* CONTROLE DE TAMANHO DO CONTAINER E ÍCONE DE EMAIL */}
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
                       <Mail className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                     </div>
-                    {/* CONTROLE DE FONTE DOS TEXTOS (text-base sm:text-lg lg:text-xl) */}
-                    <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl">
+                    <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl break-all">
                       {email.label}
                     </span>
                   </a>
@@ -149,37 +176,86 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Coluna Direita: Lâmpada Interativa */}
-            <div className="flex flex-col items-center justify-center text-center h-full min-h-[320px]">
-              <div
-                onClick={() => setIsLit(!isLit)}
-                className="cursor-pointer p-6 sm:p-8 rounded-full transition-colors duration-300 relative group"
-                title="Clique para acender a lâmpada"
-              >
-                {/* AJUSTE DE TAMANHO DA LÂMPADA AQUI (w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44) */}
-                <Lightbulb
-                  className={`w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 transition-all duration-500 ${
-                    isLit
-                      ? 'text-[#F8DE62] drop-shadow-[0_0_40px_rgba(248,222,98,0.85)] scale-110 sm:scale-125'
-                      : 'text-neutral-600 hover:text-[#F8DE62] hover:drop-shadow-[0_0_18px_rgba(248,222,98,0.6)]'
-                  }`}
-                />
-              </div>
+            {/* Coluna Direita: Formulário de Contato Assíncrono */}
+            <div className="w-full bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-between shadow-xl">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-black text-[#F8DE62] mb-6 uppercase tracking-wide border-b border-neutral-800 pb-3">
+                  Envie uma Mensagem
+                </h2>
 
-              {/* Mensagem de Confirmação */}
-              <div className="h-8 mt-2">
-                <AnimatePresence>
-                  {isLit && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="text-[#F8DE62] font-bold text-lg sm:text-xl drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] uppercase tracking-widest"
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  {/* Campo: Nome */}
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                      Nome
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="Seu nome"
+                      className="w-full bg-neutral-950 text-white placeholder-neutral-500 border border-neutral-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F8DE62] focus:ring-1 focus:ring-[#F8DE62] transition-colors"
+                    />
+                  </div>
+
+                  {/* Campo: E-mail */}
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                      E-mail
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="seu@email.com"
+                      className="w-full bg-neutral-950 text-white placeholder-neutral-500 border border-neutral-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F8DE62] focus:ring-1 focus:ring-[#F8DE62] transition-colors"
+                    />
+                  </div>
+
+                  {/* Campo: Mensagem */}
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                      Mensagem
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      required
+                      placeholder="Como podemos ajudar?"
+                      className="w-full bg-neutral-950 text-white placeholder-neutral-500 border border-neutral-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F8DE62] focus:ring-1 focus:ring-[#F8DE62] transition-colors resize-none"
+                    ></textarea>
+                  </div>
+
+                  {/* Mensagem de Feedback */}
+                  {result.message && (
+                    <div
+                      className={`flex items-center gap-2 p-3 rounded-lg text-sm font-medium ${result.isSuccess
+                        ? 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-400'
+                        : 'bg-red-950/40 border border-red-500/30 text-red-400'
+                        }`}
                     >
-                      Negócio Aceso!
-                    </motion.p>
+                      {result.isSuccess ? (
+                        <CheckCircle2 className="w-4 h-4 shrink-0" />
+                      ) : (
+                        <AlertCircle className="w-4 h-4 shrink-0" />
+                      )}
+                      <span>{result.message}</span>
+                    </div>
                   )}
-                </AnimatePresence>
+
+                  {/* Botão de Envio */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full mt-2 bg-[#F8DE62] text-black font-bold py-3 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    {isSubmitting ? "ENVIANDO..." : "ENVIAR MENSAGEM"}
+                  </button>
+                </form>
               </div>
             </div>
 
@@ -190,7 +266,6 @@ export default function Contact() {
       {/* ========================================================= */}
       {/* 2. SEGUNDA DOBRA: "EMPRESAS QUE ACENDERAM SEUS NEGÓCIOS"  */}
       {/* ========================================================= */}
-      {/* AJUSTE DE ESPAÇAMENTO SUPERIOR DA SEÇÃO DE EMPRESAS AQUI */}
       <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center pt-10 pb-16 sm:pt-12 sm:pb-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-900 w-full z-10">
         <div className="max-w-5xl mx-auto w-full space-y-10 sm:space-y-12">
           <div className="text-center space-y-2">
@@ -210,11 +285,10 @@ export default function Contact() {
                 <div
                   key={client.id}
                   onClick={() => toggleClient(client.id)}
-                  className={`w-28 sm:w-32 h-20 flex items-center justify-center cursor-pointer transition-all duration-300 ${
-                    isClientLit
-                      ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(248,222,98,0.85)]'
-                      : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
-                  }`}
+                  className={`w-28 sm:w-32 h-20 flex items-center justify-center cursor-pointer transition-all duration-300 ${isClientLit
+                    ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(248,222,98,0.85)]'
+                    : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                    }`}
                   title={client.name}
                 >
                   <img
@@ -222,7 +296,6 @@ export default function Contact() {
                     alt={client.name}
                     className="max-w-full max-h-full object-contain"
                     onError={(e) => {
-                      // Fallback em caso de erro da imagem
                       e.target.style.display = 'none';
                       e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-[#F8DE62] text-glow whitespace-nowrap">${client.name}</span>`;
                     }}
