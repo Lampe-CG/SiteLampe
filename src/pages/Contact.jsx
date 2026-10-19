@@ -94,23 +94,23 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex-1 flex flex-col relative overflow-hidden text-neutral-300"
+      className="flex-1 flex flex-col relative overflow-hidden text-muted bg-gradient-to-b from-page to-page-2 transition-colors duration-300"
     >
-      {/* Visual lighting background */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow-500/5 blur-[160px] pointer-events-none"></div>
+      {/* Formas orgânicas de fundo */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-lampe-yellow/15 dark:bg-lampe-yellow/10 blur-[110px] pointer-events-none"></div>
 
       {/* ========================================================= */}
       {/* 1. PRIMEIRA DOBRA: HERO / SEÇÃO PRINCIPAL DE CONTATO     */}
       {/* ========================================================= */}
-      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-between items-center py-12 px-4 sm:px-6 lg:px-8 w-full z-10">
+      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-between items-center py-16 px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="max-w-5xl mx-auto w-full flex-grow flex flex-col justify-between gap-10">
 
           {/* Cabeçalho da Página Padronizado */}
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide uppercase text-white">
-              ACENDA SEU <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">NEGÓCIO</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-outfit font-semibold text-ink tracking-tight">
+              Acenda seu <span className="bg-lampe-yellow/50 dark:bg-transparent dark:text-lampe-yellow px-3 rounded-xl">Negócio</span>
             </h1>
-            <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto px-4">
+            <p className="mt-5 text-muted/80 font-light text-base sm:text-lg max-w-xl mx-auto px-4">
               Entre em contato conosco através dos nossos canais de atendimento ou envie uma mensagem diretamente pelo formulário.
             </p>
           </div>
@@ -119,9 +119,9 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-5xl mx-auto w-full my-auto">
 
             {/* Coluna Esquerda: Card de Canais de Contato */}
-            <div className="w-full bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-between shadow-xl">
+            <div className="w-full bg-surface rounded-3xl p-8 flex flex-col justify-between shadow-[0_10px_40px_-10px_rgba(20,51,77,0.15)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
 
-              <h2 className="text-2xl sm:text-3xl font-black text-lampe-orange mb-6 uppercase tracking-wide border-b border-neutral-800 pb-3">
+              <h2 className="text-2xl sm:text-3xl font-outfit font-semibold text-ink mb-6 border-b border-line pb-3">
                 Canais de Contato
               </h2>
 
@@ -133,10 +133,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group cursor-pointer w-fit"
                 >
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-page border border-line flex items-center justify-center text-muted group-hover:text-lampe-navy dark:group-hover:text-lampe-graphite group-hover:bg-lampe-yellow group-hover:border-lampe-yellow transition-all duration-300 shrink-0">
                     <Instagram className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                   </div>
-                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-xl lg:text-2xl">
+                  <span className="font-medium font-outfit text-muted group-hover:text-ink transition-all duration-300 text-base sm:text-xl lg:text-2xl">
                     {CONTACT_INFO.instagram.label}
                   </span>
                 </a>
@@ -148,10 +148,10 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group cursor-pointer w-fit"
                 >
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-page border border-line flex items-center justify-center text-muted group-hover:text-lampe-navy dark:group-hover:text-lampe-graphite group-hover:bg-lampe-yellow group-hover:border-lampe-yellow transition-all duration-300 shrink-0">
                     <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                   </div>
-                  <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-xl lg:text-2xl">
+                  <span className="font-medium font-outfit text-muted group-hover:text-ink transition-all duration-300 text-base sm:text-xl lg:text-2xl">
                     {CONTACT_INFO.whatsapp.label}
                   </span>
                 </a>
@@ -165,10 +165,10 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 group cursor-pointer w-fit"
                   >
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-[#F8DE62] group-hover:border-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-page border border-line flex items-center justify-center text-muted group-hover:text-lampe-navy dark:group-hover:text-lampe-graphite group-hover:bg-lampe-yellow group-hover:border-lampe-yellow transition-all duration-300 shrink-0">
                       <Mail className="w-6 h-6 sm:w-7 sm:h-7 transition-transform group-hover:scale-110" />
                     </div>
-                    <span className="font-semibold text-neutral-300 group-hover:text-[#F8DE62] group-hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] transition-all duration-300 text-base sm:text-lg lg:text-xl break-all">
+                    <span className="font-medium font-outfit text-muted group-hover:text-ink transition-all duration-300 text-base sm:text-lg lg:text-xl break-all">
                       {email.label}
                     </span>
                   </a>
@@ -177,16 +177,16 @@ export default function Contact() {
             </div>
 
             {/* Coluna Direita: Formulário de Contato Assíncrono */}
-            <div className="w-full bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-between shadow-xl">
+            <div className="w-full bg-surface rounded-3xl p-8 flex flex-col justify-between shadow-[0_10px_40px_-10px_rgba(20,51,77,0.15)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#F8DE62] mb-6 uppercase tracking-wide border-b border-neutral-800 pb-3">
+                <h2 className="text-2xl sm:text-3xl font-outfit font-semibold text-ink mb-6 border-b border-line pb-3">
                   Envie uma Mensagem
                 </h2>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   {/* Campo: Nome */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-muted/70 font-outfit">
                       Nome
                     </label>
                     <input
@@ -195,13 +195,13 @@ export default function Contact() {
                       name="name"
                       required
                       placeholder="Seu nome"
-                      className="w-full bg-neutral-950 text-white placeholder-neutral-500 border border-neutral-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F8DE62] focus:ring-1 focus:ring-[#F8DE62] transition-colors"
+                      className="w-full bg-page text-ink placeholder-muted/40 border border-line rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-lampe-yellow focus:ring-2 focus:ring-lampe-yellow/40 transition-colors"
                     />
                   </div>
 
                   {/* Campo: E-mail */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-muted/70 font-outfit">
                       E-mail
                     </label>
                     <input
@@ -210,13 +210,13 @@ export default function Contact() {
                       name="email"
                       required
                       placeholder="seu@email.com"
-                      className="w-full bg-neutral-950 text-white placeholder-neutral-500 border border-neutral-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F8DE62] focus:ring-1 focus:ring-[#F8DE62] transition-colors"
+                      className="w-full bg-page text-ink placeholder-muted/40 border border-line rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-lampe-yellow focus:ring-2 focus:ring-lampe-yellow/40 transition-colors"
                     />
                   </div>
 
                   {/* Campo: Mensagem */}
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-muted/70 font-outfit">
                       Mensagem
                     </label>
                     <textarea
@@ -225,16 +225,16 @@ export default function Contact() {
                       rows="4"
                       required
                       placeholder="Como podemos ajudar?"
-                      className="w-full bg-neutral-950 text-white placeholder-neutral-500 border border-neutral-800 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F8DE62] focus:ring-1 focus:ring-[#F8DE62] transition-colors resize-none"
+                      className="w-full bg-page text-ink placeholder-muted/40 border border-line rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-lampe-yellow focus:ring-2 focus:ring-lampe-yellow/40 transition-colors resize-none"
                     ></textarea>
                   </div>
 
                   {/* Mensagem de Feedback */}
                   {result.message && (
                     <div
-                      className={`flex items-center gap-2 p-3 rounded-lg text-sm font-medium ${result.isSuccess
-                        ? 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-400'
-                        : 'bg-red-950/40 border border-red-500/30 text-red-400'
+                      className={`flex items-center gap-2 p-3 rounded-xl text-sm font-medium ${result.isSuccess
+                        ? 'bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400'
+                        : 'bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-500/30 text-red-600 dark:text-red-400'
                         }`}
                     >
                       {result.isSuccess ? (
@@ -250,7 +250,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full mt-2 bg-[#F8DE62] text-black font-bold py-3 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(248,222,98,0.6)] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full mt-2 bg-lampe-yellow hover:bg-lampe-navy dark:hover:bg-lampe-cream hover:text-lampe-cream dark:hover:text-lampe-graphite text-lampe-navy dark:text-lampe-graphite font-outfit font-semibold py-3.5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     {isSubmitting ? "ENVIANDO..." : "ENVIAR MENSAGEM"}
@@ -266,18 +266,18 @@ export default function Contact() {
       {/* ========================================================= */}
       {/* 2. SEGUNDA DOBRA: "EMPRESAS QUE ACENDERAM SEUS NEGÓCIOS"  */}
       {/* ========================================================= */}
-      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center pt-10 pb-16 sm:pt-12 sm:pb-20 px-4 sm:px-6 lg:px-8 border-t border-neutral-900 w-full z-10">
+      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center items-center pt-10 pb-16 sm:pt-12 sm:pb-20 px-4 sm:px-6 lg:px-8 border-t border-line w-full z-10">
         <div className="max-w-5xl mx-auto w-full space-y-10 sm:space-y-12">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-lampe-orange tracking-wide uppercase">
-              EMPRESAS QUE <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">ACENDERAM</span> SEUS NEGÓCIOS
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-outfit font-semibold text-ink tracking-tight">
+              Empresas que <span className="bg-lampe-yellow/50 dark:bg-transparent dark:text-lampe-yellow px-3 rounded-xl">acenderam</span> seus negócios
             </h2>
-            <p className="text-neutral-400 text-sm sm:text-base">
+            <p className="text-muted/70 font-light text-base sm:text-lg">
               Clique nas marcas para acendê-las
             </p>
           </div>
 
-          {/* Grid Flexível de Logos (Sem círculos, com glow no PNG) */}
+          {/* Grid Flexível de Logos */}
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 max-w-5xl mx-auto">
             {CLIENT_LOGOS.map((client) => {
               const isClientLit = litClients.includes(client.id);
@@ -286,18 +286,18 @@ export default function Contact() {
                   key={client.id}
                   onClick={() => toggleClient(client.id)}
                   className={`w-28 sm:w-32 h-20 flex items-center justify-center cursor-pointer transition-all duration-300 ${isClientLit
-                    ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_15px_rgba(248,222,98,0.85)]'
-                    : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                    ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_14px_rgba(20,51,77,0.85)] dark:drop-shadow-[0_0_14px_rgba(244,196,22,0.85)]'
+                    : 'opacity-55 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-110 hover:drop-shadow-[0_0_14px_rgba(20,51,77,0.85)] dark:hover:drop-shadow-[0_0_14px_rgba(244,196,22,0.85)]'
                     }`}
                   title={client.name}
                 >
                   <img
                     src={client.img}
                     alt={client.name}
-                    className="max-w-full max-h-full object-contain"
+                    className="max-w-full max-h-full object-contain p-2"
                     onError={(e) => {
                       e.target.style.display = 'none';
-                      e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-[#F8DE62] text-glow whitespace-nowrap">${client.name}</span>`;
+                      e.target.parentNode.innerHTML = `<span class="text-xs font-bold text-ink whitespace-nowrap font-outfit">${client.name}</span>`;
                     }}
                   />
                 </div>

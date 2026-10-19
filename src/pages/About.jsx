@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lightbulb } from 'lucide-react';
 
 export default function About() {
   const [selectedPerson, setSelectedPerson] = useState('lara');
@@ -25,19 +24,20 @@ export default function About() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex-1 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 text-neutral-300 relative overflow-hidden min-h-[calc(100vh-80px)] justify-between"
+      className="flex-1 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8 text-muted relative overflow-hidden min-h-[calc(100vh-80px)] justify-between bg-gradient-to-b from-page to-page-2 transition-colors duration-300"
     >
-      {/* Visual lighting background */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow-500/5 blur-[160px] pointer-events-none"></div>
+      {/* Formas orgânicas de fundo */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-lampe-yellow/15 dark:bg-lampe-yellow/10 blur-[110px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-lampe-navy/10 dark:bg-lampe-navy/30 blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-4xl w-full mx-auto z-10 flex-grow flex flex-col justify-between gap-10">
 
         {/* Cabeçalho Padronizado */}
         <div className="text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-wide uppercase text-white">
-            QUEM <span className="text-[#F8DE62] drop-shadow-[0_0_12px_rgba(248,222,98,0.6)]">SOMOS</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-outfit font-semibold text-ink tracking-tight">
+            Quem <span className="bg-lampe-yellow/50 dark:bg-transparent dark:text-lampe-yellow px-3 rounded-xl">Somos</span>
           </h1>
-          <p className="mt-3 text-neutral-400 text-sm sm:text-base max-w-xl mx-auto px-4">
+          <p className="mt-5 text-muted/80 font-light text-base sm:text-lg max-w-xl mx-auto px-4">
             Conheça as mentes brilhantes por trás da proteção das maiores ideias e marcas nacionais.
           </p>
         </div>
@@ -56,29 +56,38 @@ export default function About() {
                 src={`${import.meta.env.BASE_URL}Pedro.png`}
                 alt="Pedro"
                 className={`w-auto max-h-full object-contain ${selectedPerson === 'pedro'
-                    ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(248,222,98,0.85)] scale-105 transition-all duration-300'
-                    : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                  ? 'opacity-100 grayscale-0 drop-shadow-[0_15px_35px_rgba(20,51,77,0.35)] dark:drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] scale-105 transition-all duration-300'
+                  : 'opacity-60 grayscale brightness-90 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_10px_25px_rgba(20,51,77,0.25)]'
                   }`}
               />
             </div>
             <span
-              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${selectedPerson === 'pedro' ? 'text-[#F8DE62]' : 'text-neutral-500'
+              className={`mt-4 text-xs sm:text-sm font-semibold font-outfit transition-colors duration-300 px-4 py-1.5 rounded-full ${selectedPerson === 'pedro' ? 'text-lampe-graphite bg-lampe-yellow' : 'text-muted/60'
                 }`}
             >
               Pedro
             </span>
           </div>
 
-          {/* Column 2: Interactive Lightbulb */}
+          {/* Column 2: Interactive Lightbulb — sem fundo quando desligada */}
           <div className="flex flex-col items-center justify-center">
-            <Lightbulb
-              size={72}
+            <button
+              type="button"
               onClick={() => setIsLit(!isLit)}
-              className={`cursor-pointer ${isLit
-                  ? 'text-[#F8DE62] drop-shadow-[0_0_30px_rgba(248,222,98,0.85)] scale-110 transition-all duration-300'
-                  : 'text-neutral-600 hover:text-[#F8DE62] hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)] transition-all duration-300'
-                }`}
-            />
+              aria-pressed={isLit}
+              aria-label="Acender a Lampe"
+              className="p-4 cursor-pointer focus:outline-none"
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}lampe-icon.png`}
+                alt="LAMPE"
+                draggable={false}
+                className={`h-16 sm:h-20 w-auto object-contain select-none transition-all duration-300 ${isLit
+                  ? 'opacity-100 grayscale-0 scale-110 drop-shadow-[0_0_22px_rgba(244,196,22,0.9)]'
+                  : 'opacity-50 grayscale hover:opacity-100 hover:grayscale-0 hover:scale-105 hover:drop-shadow-[0_0_14px_rgba(244,196,22,0.6)]'
+                  }`}
+              />
+            </button>
           </div>
 
           {/* Column 3: Lara */}
@@ -92,13 +101,13 @@ export default function About() {
                 src={`${import.meta.env.BASE_URL}Lara.png`}
                 alt="Lara"
                 className={`w-auto max-h-full object-contain ${selectedPerson === 'lara'
-                    ? 'opacity-100 grayscale-0 drop-shadow-[0_0_25px_rgba(248,222,98,0.85)] scale-105 transition-all duration-300'
-                    : 'opacity-60 grayscale brightness-75 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(248,222,98,0.6)]'
+                  ? 'opacity-100 grayscale-0 drop-shadow-[0_15px_35px_rgba(20,51,77,0.35)] dark:drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] scale-105 transition-all duration-300'
+                  : 'opacity-60 grayscale brightness-90 transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_10px_25px_rgba(20,51,77,0.25)]'
                   }`}
               />
             </div>
             <span
-              className={`mt-4 text-xs sm:text-sm font-bold transition-colors duration-300 ${selectedPerson === 'lara' ? 'text-[#F8DE62]' : 'text-neutral-500'
+              className={`mt-4 text-xs sm:text-sm font-semibold font-outfit transition-colors duration-300 px-4 py-1.5 rounded-full ${selectedPerson === 'lara' ? 'text-lampe-graphite bg-lampe-yellow' : 'text-muted/60'
                 }`}
             >
               Lara
@@ -108,8 +117,8 @@ export default function About() {
         </div>
 
         {/* Dynamic Detail Area */}
-        <div className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 relative overflow-hidden min-h-[255px]">
-          <div className="absolute inset-0 bg-yellow-500/5 blur-xl pointer-events-none"></div>
+        <div className="bg-surface rounded-3xl p-8 relative overflow-hidden min-h-[255px] shadow-[0_10px_40px_-10px_rgba(20,51,77,0.15)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
+          <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-lampe-yellow/15 blur-3xl pointer-events-none"></div>
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -121,14 +130,14 @@ export default function About() {
               className="relative z-10 space-y-4 text-center md:text-left"
             >
               <div>
-                <h3 className="text-xl sm:text-2xl font-black text-white">
+                <h3 className="text-xl sm:text-2xl font-outfit font-semibold text-ink">
                   {team[selectedPerson].name}
                 </h3>
-                <span className="text-xs sm:text-sm text-[#F8DE62] font-medium tracking-wide">
+                <span className="text-xs sm:text-sm text-muted font-medium tracking-wide">
                   {team[selectedPerson].role}
                 </span>
               </div>
-              <p className="text-neutral-400 text-sm sm:text-base leading-relaxed text-justify">
+              <p className="text-muted/80 font-light text-sm sm:text-base leading-relaxed text-justify">
                 {team[selectedPerson].desc}
               </p>
             </motion.div>

@@ -1,63 +1,65 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Mail } from 'lucide-react';
+import { Mail, Instagram, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-950 border-t border-neutral-900 text-neutral-400 py-12 px-4 sm:px-6 lg:px-8 w-full mt-auto">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+    <footer className="bg-deep text-lampe-cream/70 py-14 px-4 sm:px-6 lg:px-8 w-full mt-auto rounded-t-[3rem] border-t border-lampe-yellow/20 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start text-center md:text-left">
 
         {/* Branding */}
-        <div className="flex flex-col items-center md:items-start gap-2">
-          <p className="text-xs text-neutral-600 mt-2">
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <img
+            src={`${import.meta.env.BASE_URL}lampe-logo-amarelo.png`}
+            alt="LAMPE"
+            className="h-12 w-auto object-contain"
+          />
+          <p className="font-outfit text-sm text-lampe-cream/60 max-w-xs leading-relaxed">
+            A luz que protege sua ideia. Transformando inovação em segurança, exclusividade e valor de mercado.
+          </p>
+          <p className="text-xs text-lampe-cream/40 mt-2">
             &copy; {currentYear} LAMPE. Todos os direitos reservados.
           </p>
         </div>
 
         {/* Quick Links */}
-        <div className="flex flex-col items-center gap-2">
-          <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Links Rápidos</h4>
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <NavLink to="/" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Início</NavLink>
-            <NavLink to="/servicos" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Serviços</NavLink>
-            <NavLink to="/quem-somos" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Quem Somos</NavLink>
-            <NavLink to="/contato" className="hover:text-[#F8DE62] hover:text-glow transition-colors">Contato</NavLink>
+        <div className="flex flex-col items-center gap-3">
+          <h4 className="text-sm font-semibold text-lampe-yellow uppercase tracking-widest mb-2 font-outfit">Links Rápidos</h4>
+          <div className="flex flex-col sm:flex-row md:flex-col gap-3 text-sm font-outfit">
+            <NavLink to="/" className="hover:text-lampe-yellow transition-colors">Início</NavLink>
+            <NavLink to="/servicos" className="hover:text-lampe-yellow transition-colors">Serviços</NavLink>
+            <NavLink to="/quem-somos" className="hover:text-lampe-yellow transition-colors">Quem Somos</NavLink>
+            <NavLink to="/contato" className="hover:text-lampe-yellow transition-colors">Contato</NavLink>
           </div>
         </div>
 
         {/* Social / Connect */}
-        <div className="flex flex-col items-center md:items-end gap-3">
-          <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Conecte-se Conosco</h4>
-          <div className="flex gap-4">
+        <div className="flex flex-col items-center md:items-end gap-4">
+          <h4 className="text-sm font-semibold text-lampe-yellow uppercase tracking-widest mb-2 font-outfit">Conecte-se Conosco</h4>
+          <div className="flex gap-3">
             <a
               href="https://www.instagram.com/lampebr/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-[#F8DE62] hover:border-[#F8DE62]/40 hover:shadow-[0_0_10px_rgba(248,222,98,0.4)] hover:drop-shadow-[0_0_8px_rgba(248,222,98,0.6)] transition-all duration-300 cursor-pointer"
+              className="w-11 h-11 rounded-2xl bg-lampe-cream/10 hover:bg-lampe-yellow flex items-center justify-center text-lampe-cream hover:text-lampe-navy transition-all duration-300 cursor-pointer"
               aria-label="Instagram"
             >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg>
+              <Instagram className="w-5 h-5" />
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=5583987048202"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-[#F8DE62] hover:border-[#F8DE62]/40 hover:shadow-[0_0_10px_rgba(248,222,98,0.4)] hover:drop-shadow-[0_0_8px_rgba(248,222,98,0.6)] transition-all duration-300 cursor-pointer"
+              className="w-11 h-11 rounded-2xl bg-lampe-cream/10 hover:bg-lampe-yellow flex items-center justify-center text-lampe-cream hover:text-lampe-navy transition-all duration-300 cursor-pointer"
               aria-label="WhatsApp"
             >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-              </svg>
+              <MessageCircle className="w-5 h-5" />
             </a>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@lampebr.com"
-              className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-[#F8DE62] hover:border-[#F8DE62]/40 hover:shadow-[0_0_10px_rgba(248,222,98,0.4)] hover:drop-shadow-[0_0_8px_rgba(248,222,98,0.6)] transition-all duration-300 cursor-pointer"
+              className="w-11 h-11 rounded-2xl bg-lampe-cream/10 hover:bg-lampe-yellow flex items-center justify-center text-lampe-cream hover:text-lampe-navy transition-all duration-300 cursor-pointer"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />

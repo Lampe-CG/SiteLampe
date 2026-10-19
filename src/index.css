@@ -1,8 +1,46 @@
 @import "tailwindcss";
 
+/* Variante dark controlada pela classe .dark no <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== Tokens de tema (LIGHT) ===== */
+:root {
+  --c-page: #FCF8E5;        /* Creme */
+  --c-page-2: #F7EFD8;      /* Creme mais profundo */
+  --c-surface: #FFFFFF;     /* Cards */
+  --c-ink: #14334D;         /* Títulos / texto forte (Azul Marinho) */
+  --c-muted: #4B5966;       /* Texto secundário (Cinza Azulado) */
+  --c-line: rgba(20, 51, 77, 0.10);
+  --c-deep: #14334D;        /* Blocos em destaque (footer / CTA) */
+  color-scheme: light;
+}
+
+/* ===== Tokens de tema (DARK) ===== */
+.dark {
+  --c-page: #14334D;        /* Azul Marinho */
+  --c-page-2: #0F2A3E;      /* Azul Marinho profundo */
+  --c-surface: #4B5966;     /* Cards em Cinza Azulado */
+  --c-ink: #FCF8E5;         /* Títulos em Creme */
+  --c-muted: #DDE4EA;       /* Texto secundário (Cinza Azulado claro) */
+  --c-line: rgba(252, 248, 229, 0.14);
+  --c-deep: #0F2A3E;        /* Blocos em destaque (footer / CTA) */
+  color-scheme: dark;
+}
+
 @theme {
-  --color-lampe-orange: #FF8F4E;
-  --color-neon-yellow: #F8DE62;
+  /* ===== IDENTIDADE VISUAL LAMPE ===== */
+  --color-lampe-yellow: #F4C416;   /* Amarelo */
+  --color-lampe-navy: #14334D;     /* Azul Marinho */
+  --color-lampe-cream: #FCF8E5;    /* Creme */
+  --color-lampe-slate: #4B5966;    /* Cinza Azulado */
+  --color-lampe-graphite: #1F1D1D; /* Grafite */
+
+  /* Fontes do design system */
+  --font-fraunces: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-archivo: 'Archivo', system-ui, sans-serif;
+  --font-outfit: 'Outfit', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+
   --animate-lamp-flicker: lamp-flicker 3s infinite alternate;
 
   @keyframes lamp-flicker {
@@ -17,7 +55,7 @@
     56%,
     100% {
       opacity: 1;
-      filter: drop-shadow(0 0 12px rgba(248, 222, 98, 0.6));
+      filter: drop-shadow(0 0 12px rgba(244, 196, 22, 0.6));
     }
 
     20%,
@@ -25,46 +63,62 @@
     24%,
     55% {
       opacity: 0.7;
-      filter: drop-shadow(0 0 2px rgba(248, 222, 98, 0.2));
+      filter: drop-shadow(0 0 2px rgba(244, 196, 22, 0.2));
     }
   }
 }
 
-/* Custom electric glow and scrollbar utilities */
+/* Tokens semânticos que alternam entre os temas */
+@theme inline {
+  --color-page: var(--c-page);
+  --color-page-2: var(--c-page-2);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-deep: var(--c-deep);
+}
+
+/* Utilidades de brilho suaves */
 @utility neon-glow {
-  box-shadow: 0 0 15px rgba(248, 222, 98, 0.4);
-  border-color: rgba(248, 222, 98, 0.8);
+  box-shadow: 0 0 15px rgba(244, 196, 22, 0.35);
+  border-color: rgba(244, 196, 22, 0.7);
 }
 
 @utility text-glow {
-  text-shadow: 0 0 10px rgba(248, 222, 98, 0.6);
+  text-shadow: 0 0 10px rgba(244, 196, 22, 0.5);
 }
 
-/* Base styles override */
+/* Estilos base — acompanham o tema ativo */
 html,
 body {
-  background-color: #030303;
-  color: #ffffff;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--c-page);
+  color: var(--c-muted);
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar */
+/* Scrollbar suave */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030303;
+  background: var(--c-page);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
-  border-radius: 4px;
+  background: #C9C0A6;
+  border-radius: 999px;
+  border: 2px solid var(--c-page);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4B5966;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #F8DE62;
-  box-shadow: 0 0 8px #F8DE62;
+  background: #F4C416;
 }

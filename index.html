@@ -6,6 +6,19 @@
   <link rel="icon" type="image/svg+xml" href="/lampe-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lampe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Aplica o tema salvo antes do React montar (evita flash branco) — padrão: dark -->
+  <script>
+    (function () {
+      var theme = localStorage.getItem('lampe-theme');
+      if (theme !== 'light') document.documentElement.classList.add('dark');
+    })();
+  </script>
 </head>
 
 <body>
