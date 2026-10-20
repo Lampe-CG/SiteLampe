@@ -7,12 +7,12 @@ export default function About() {
 
   const team = {
     lara: {
-      name: 'Lara',
-      role: 'Co-fundadora / Especialista em Registro de Marcas',
+      name: 'Lara Andrade',
+      role: 'Fundadora / Especialista em Propriedade Intelectual & Registro de Marcas',
       desc: 'Advogada com atuação estratégica em Propriedade Intelectual, voltada à proteção e valorização de marcas, negócios e ativos intangíveis. Especialista em registro de marcas, direitos autorais, contratos e proteção jurídica da inovação. Mestre em Desenvolvimento Regional pela UEPB, alia conhecimento jurídico e visão de negócios para transformar inovação em segurança, exclusividade e valor. ',
     },
     pedro: {
-      name: 'Pedro',
+      name: 'Pedro Crisologo',
       role: 'Fundador / Especialista em Propriedade Intelectual & Patentes',
       desc: 'Consultor de projetos de Engenharia Mecânica voltados para a área de inovação. Atua como representante dos Projetos de Mobilidade da UFCG, e consultor de projetos desenvolvidos por laboratórios parceiros na UEPB. Pesquisador do Programa Institucional de Bolsas de Iniciação em Desenvolvimento Tecnológico e Inovação, responsável pelo projeto intitulado Transformação Digital Aplicada ao Desenvolvimento de Sistema Preditivo e Telemetria Embarcada em Veículo Fórmula SAE.',
     },
