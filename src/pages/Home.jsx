@@ -45,13 +45,13 @@ export default function Home() {
               sólida
             </h1>
 
-            <p className="font-outfit text-base lg:text-xl text-muted leading-relaxed font-light">
+            <p className="font-outfit text-base lg:text-xl text-muted leading-relaxed font-light text-justify">
               A LAMPE® une rigor jurídico e visão de negócios para proteger e valorizar marcas, negócios e ativos
               intangíveis, transformando inovação em segurança, exclusividade e valor de mercado.
             </p>
 
             <p className="font-outfit text-base text-muted/70 leading-relaxed font-light">
-              Fundada por uma Mestre em Desenvolvimento Regional pela UEPB e pesquisador com atuação de destaque na
+              Fundada por uma Mestre em Desenvolvimento Regional pela UEPB e um pesquisador com atuação de destaque na
               UFCG, possui dezenas de marcas registradas e 4 patentes publicadas.
             </p>
 
@@ -154,7 +154,7 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="font-outfit text-5xl sm:text-6xl md:text-7xl font-semibold text-lampe-yellow tracking-tight leading-none mt-3"
           >
-            Tem que ter.
+            Tem que ter
           </motion.h4>
 
           <motion.div

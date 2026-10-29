@@ -10,7 +10,7 @@ const CONTACT_INFO = {
   },
   whatsapp: {
     label: 'WhatsApp',
-    link: 'https://api.whatsapp.com/send?phone=5583987048202',
+    link: 'https://wa.me/+5583987048202?text=Oi!%20Vim%20pelo%20Instagram%20da%20LAMPE%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o.%20%F0%9F%92%A1',
   },
   emails: [
     { label: 'contato@lampebr.com', link: 'https://mail.google.com/mail/?view=cm&fs=1&to=contato@lampebr.com' },

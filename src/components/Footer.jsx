@@ -49,7 +49,7 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://api.whatsapp.com/send?phone=5583987048202"
+              href="https://wa.me/+5583987048202?text=Oi!%20Vim%20pelo%20Instagram%20da%20LAMPE%20e%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o.%20%F0%9F%92%A1"
               target="_blank"
               rel="noopener noreferrer"
               className="w-11 h-11 rounded-2xl bg-lampe-cream/10 hover:bg-lampe-yellow flex items-center justify-center text-lampe-cream hover:text-lampe-navy transition-all duration-300 cursor-pointer"

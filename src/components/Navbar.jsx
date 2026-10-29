@@ -60,7 +60,7 @@ export default function Navbar() {
 
                 {/* Submenu Dropdown com Hover Bridge */}
                 <div
-                  className={`absolute top-[70px] left-1/2 -translate-x-1/2 w-60 bg-surface border border-line rounded-2xl shadow-[0_20px_50px_-12px_rgba(20,51,77,0.25)] py-2 z-50 transition-all duration-300 transform ${showDropdown
+                  className={`absolute top-[70px] left-1/2 -translate-x-1/2 w-64 bg-surface border border-line rounded-2xl shadow-[0_20px_50px_-12px_rgba(20,51,77,0.25)] py-2 z-50 transition-all duration-300 transform ${showDropdown
                     ? 'opacity-100 visible translate-y-0 pointer-events-auto'
                     : 'opacity-0 invisible translate-y-2 pointer-events-none'
                     }`}
@@ -96,7 +96,17 @@ export default function Navbar() {
                       : 'text-muted hover:text-ink hover:bg-page'
                       }`}
                   >
-                    Projetos
+                    Desenvolvimento de Projetos
+                  </NavLink>
+                  <NavLink
+                    to="/servicos?tipo=software"
+                    onClick={() => setShowDropdown(false)}
+                    className={`block px-4 py-3 text-sm rounded-xl mx-2 transition-colors font-medium ${location.search === '?tipo=software'
+                      ? 'text-lampe-graphite bg-lampe-yellow font-semibold'
+                      : 'text-muted hover:text-ink hover:bg-page'
+                      }`}
+                  >
+                    Desenvolvimento de Software
                   </NavLink>
                 </div>
               </div>
@@ -168,7 +178,14 @@ export default function Navbar() {
                       onClick={() => setIsOpen(false)}
                       className={`py-2 px-4 rounded-xl transition-all text-sm ${location.search === '?tipo=projetos' ? 'text-lampe-graphite font-semibold bg-lampe-yellow' : 'text-muted hover:text-ink'}`}
                     >
-                      Projetos
+                      Desenvolvimento de Projetos
+                    </NavLink>
+                    <NavLink
+                      to="/servicos?tipo=software"
+                      onClick={() => setIsOpen(false)}
+                      className={`py-2 px-4 rounded-xl transition-all text-sm ${location.search === '?tipo=software' ? 'text-lampe-graphite font-semibold bg-lampe-yellow' : 'text-muted hover:text-ink'}`}
+                    >
+                      Desenvolvimento de Software
                     </NavLink>
                   </div>
                 </div>
