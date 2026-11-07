@@ -34,7 +34,7 @@ const SERVICES_DATA = {
   software: {
     title: 'DESENVOLVIMENTO DE SOFTWARE',
     videoTitle: 'Vídeo Explicativo - Desenvolvimento de Software',
-    videoUrl: '', // INSERIR VIDEO
+    videoUrl: 'https://www.youtube.com/embed/wVaATzwDq-o?si=M9BnIlxiy1hfkoGS', // INSERIR VIDEO
     paragraphs: [
       'Desenvolvemos soluções de software sob medida, de sistemas web e aplicativos a plataformas de gestão, alinhadas às necessidades estratégicas do seu negócio e prontas para escalar.',
       'Acompanhamos todo o ciclo de desenvolvimento, da concepção à entrega, e orientamos o registro do programa de computador junto ao INPI, garantindo a proteção legal da autoria e do código-fonte.'
