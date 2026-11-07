@@ -31,6 +31,7 @@ export default function Footer() {
             <NavLink to="/" className="hover:text-lampe-yellow transition-colors">Início</NavLink>
             <NavLink to="/servicos" className="hover:text-lampe-yellow transition-colors">Serviços</NavLink>
             <NavLink to="/quem-somos" className="hover:text-lampe-yellow transition-colors">Quem Somos</NavLink>
+            <NavLink to="/faq" className="hover:text-lampe-yellow transition-colors">FAQ</NavLink>
             <NavLink to="/contato" className="hover:text-lampe-yellow transition-colors">Contato</NavLink>
           </div>
         </div>

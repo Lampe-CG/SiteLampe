@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: 'Início', path: '/' },
     { name: 'Serviços', path: '/servicos?tipo=marca' },
     { name: 'Quem Somos', path: '/quem-somos' },
+    { name: 'FAQ', path: '/faq' },
     { name: 'Contato', path: '/contato' },
   ];
 

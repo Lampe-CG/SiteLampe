@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/servicos" element={<Services />} />
             <Route path="/quem-somos" element={<About />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/contato" element={<Contact />} />
           </Routes>
         </main>
