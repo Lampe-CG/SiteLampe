@@ -434,7 +434,7 @@ export default function FAQ() {
             </p>
             <button
               type="button"
-              onClick={() => window.open("https://wa.me/+5583987048202?text=Olá !%20vim%20pelo%20site%20da%20LAMPE%20e%20estou%20com%20duvidas.", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open("https://wa.me/+5583987048202?text=Olá !%20Vim%20pelo%20site%20da%20LAMPE%20e%20estou%20com%20duvidas.", "_blank", "noopener,noreferrer")}
               className="mt-2 inline-flex items-center gap-2 bg-lampe-yellow text-lampe-graphite font-semibold font-outfit px-6 py-3 rounded-full hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(244,196,22,0.5)] transition-all duration-300 cursor-pointer"
             >
               Fale Conosco
